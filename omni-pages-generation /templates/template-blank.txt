@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/xsl/crimson/common-page.xsl" site="templates" title="Page" extension="aspx"?>
+
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd">
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<headcode></headcode><!-- before closing head tag -->
+	<bodycode></bodycode><!-- after opening body tag -->
+	<footcode></footcode><!-- before closing body tag -->
+	<ouc:info><tcf>blank.tcf</tcf><tmpl>blank.tmpl</tmpl></ouc:info>
+
+	<ouc:properties label="metadata">
+		<title>|||Page Heading|||</title>
+		<meta name="Description" content="" />
+		<meta name="Keywords" content="" />
+	</ouc:properties>
+
+	<ouc:properties label="config">
+		<parameter section="Content" group="Everyone" type="text" name="heading" prompt="Page Heading" alt="Please enter the page heading.">|||Page Heading|||</parameter>
+	</ouc:properties>
+
+
+	<ouc:properties label="layout">
+		<parameter section="Hero Content" group="Everyone" type="select" name="banner-content"  prompt="Banner Content" alt="Select banner type.">
+<option value="default" selected="true">Default</option>
+<option value="image" selected="false">Image</option>
+<option value="short-image" selected="false">Short Image</option>
+</parameter>
+		<parameter group="Everyone" type="select" name="chevron-color" prompt="Chevron Color" alt="Select the color to be used for the chevron at the bottom of the banner image/video.">
+<option value="" selected="true">White</option>
+<option value="hero__college" selected="false">Red</option>
+<option value="hero__research" selected="false">Grey</option>
+</parameter>
+        <parameter group="Everyone" type="checkbox" name="dark-overlay" prompt="Dark Overlay" alt="Place a dark overlay between the image/video and text (does not work with YouTube video)">
+<option value="darken" selected="false">Enabled</option>
+</parameter>
+		<parameter name="hero-image" type="filechooser" group="Everyone" prompt="Hero Image" alt="Please enter hero image or leave blank to display no hero image." dependency="yes"></parameter>
+		<parameter group="Everyone" type="select" name="hero-image-x" prompt="Hero Image Position X" alt="Select how the image should be positioned horizontally within the hero area.">
+<option value="hero__left" selected="false">Left</option>
+<option value="" selected="true">Center</option>
+<option value="hero__right" selected="false">Right</option>
+</parameter>
+		<parameter group="Everyone" type="select" name="hero-image-y" prompt="Hero Image Position Y" alt="Select how the image should be positioned vertically within the hero area.">
+<option value="hero__top" selected="false">Top</option>
+<option value="" selected="true">Center</option>
+<option value="hero__bottom" selected="false">Bottom</option>
+</parameter>
+		<parameter name="hero-video" type="text" group="Everyone" prompt="Hero Video" alt="Please use a YouTube embed link e.g. https://youtube.com/embed/u31qwQUeGuM"></parameter>
+		<parameter group="Everyone" type="text" name="intro" prompt="Intro Text" alt="Please enter the page's introductory text."></parameter>
+
+		<parameter section="Editable Regions" group="Everyone" type="checkbox" name="content-regions" prompt="Editable Region" alt="Turn on/off content elements to customize the layout.">
+<option value="region-1" selected="false">Region 1</option>
+<option value="region-2" selected="true">Region 2</option>
+<option value="region-3" selected="false">Region 3</option>
+<option value="region-4" selected="true">Region 4</option>
+<option value="region-5" selected="false">Region 5</option>
+<option value="region-6" selected="true">Region 6</option>
+<option value="region-7" selected="false">Region 7</option>
+<option value="region-8" selected="true">Region 8</option>
+<option value="region-9" selected="false">Region 9</option>
+<option value="region-10" selected="true">Region 10</option>
+</parameter>
+	</ouc:properties>
+
+	<ouc:properties label="pre-footer">
+		<parameter section="Pre-Footer" name="pre-footer" type="checkbox" group="Everyone" prompt="Display" alt="Check to display the global pre-footer. The pre-footer will be dislayed above the footer.">
+<option value="yes" selected="false">Yes</option>
+</parameter>
+	</ouc:properties>
+
+	<ouc:properties label="meta-tags">
+		<parameter section="Social Meta Tags" name="override-og-type" type="text" group="Everyone" prompt="Og Type" alt="Please enter the open graph type. Enter 'website' unless you can provide the required fields for other types."></parameter>
+		<parameter name="override-og-image" type="filechooser" group="Everyone" prompt="Og Image" alt="Please choose the open graph image." dependency="yes"></parameter>
+		<parameter name="override-og-image-alt" type="text" group="Everyone" prompt="Og Image Alt" alt="Please enter the open graph image alt text."></parameter>
+		<parameter name="override-og-description" type="textarea" group="Everyone" prompt="Og Description" alt="Please enter the open graph description." rows="7"></parameter>
+		<parameter name="override-twitter-card-description" type="text" group="Everyone" prompt="Twitter Card Description" alt="Please enter the twitter card description. This description will trimmed at 200 characters per Twitter Documentation."></parameter>
+		<parameter name="override-twitter-card-image" type="filechooser" group="Everyone" prompt="Twitter Card Image" alt="Please choose the twitter card image. This image size needs to be below 5MB in size per Twitter Documentation." dependency="yes"></parameter>
+		<parameter name="override-twitter-card-image-alt" type="text" group="Everyone" prompt="Twitter Card Image Alt" alt="Please enter the twitter card image alt text. This alt text will be trimmed at a length of 420 characters per Twitter Documentation."></parameter>
+		<parameter name="override-twitter-card-type" type="select" group="Everyone" prompt="Twitter Card Type" alt="Please choose the twitter card type.">
+<option value="summary" selected="false">Summary</option>
+<option value="summary_large_image" selected="true">Summary Large Image</option>
+</parameter>
+	</ouc:properties>
+
+	<ouc:properties label="seo-config">
+		<parameter section="Search Engine Optimization" name="robots" type="checkbox" group="sesh site-admin" prompt="Prevent Search Indexing" alt="Prevent this page from being listed by search engines. Note: if the page is already listed, it may take some time to be removed using this method.">
+<option value="noindex" selected="false">Do Not Show in Search Results</option>
+</parameter>
+		<parameter name="redirect-type" group="sesh page-redirect" type="radio" prompt="Redirect Type" alt="Choose whether to use a temporary or permanent redirect to the location set in Redirect Destination.">
+<option value="" selected="true">No Redirect</option>
+<option value="302" selected="false">Temporary Redirect</option>
+<option value="301" selected="false">Permanent Redirect</option>
+</parameter>
+		<parameter name="redirect-destination" group="sesh page-redirect" type="filechooser" dependency="yes" lockout="no" prompt="Redirect Destination" alt="Enter a URL or select a file which users will be redirected to when visiting this page (if Redirect Type is set)."></parameter>
+	</ouc:properties>
+
+	<ouc:div label="region-1" group="Everyone" button-text="Region 1">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="maincontent" />
+
+	</ouc:div>
+
+	<ouc:div label="region-2" group="Everyone" button-text="Region 2"><ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><table class="ou-" data-snippet="ou-container"><caption class="mceNonEditable">Content Container</caption>
+<thead>
+<tr>
+<th class="mceNonEditable">Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-type="wysiwyg">
+<h2>Subeading</h2>
+<p>Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+<p>Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus.</p>
+</td>
+</tr>
+</tbody>
+</table></ouc:div>
+
+	<ouc:div label="region-3" group="Everyone" button-text="Region 3">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+	</ouc:div>
+
+	<ouc:div label="region-4" group="Everyone" button-text="Region 4">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+	</ouc:div>
+
+	<ouc:div label="region-5" group="Everyone" button-text="Region 5">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+	</ouc:div>
+
+	<ouc:div label="region-6" group="Everyone" button-text="Region 6">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+	</ouc:div>
+
+	<ouc:div label="region-7" group="Everyone" button-text="Region 7">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+	</ouc:div>
+
+	<ouc:div label="region-8" group="Everyone" button-text="Region 8">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+	</ouc:div>
+
+	<ouc:div label="region-9" group="Everyone" button-text="Region 9">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+	</ouc:div>
+
+	<ouc:div label="region-10" group="Everyone" button-text="Region 10">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+	</ouc:div>
+
+</document>

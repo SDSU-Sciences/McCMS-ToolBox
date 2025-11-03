@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/xsl/crimson/news-article.xsl" site="templates" title="News Article" extension="aspx"?>
+<?pcf-stylesheet path="/xsl/crimson/_dmc/_core/single-item-xml.xsl" site="templates" title="XML" extension="xml" alternate="yes"?>
+
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd">
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+    <headcode></headcode><!-- before closing head tag -->
+    <bodycode></bodycode><!-- after opening body tag -->
+    <footcode></footcode><!-- before closing body tag -->
+    <ouc:info>
+        <tcf>news-article.tcf</tcf>
+        <tmpl>news-article.tmpl</tmpl>
+    </ouc:info>
+
+    <ouc:properties label="metadata">
+        <title>Congratulations to Dr. Van der Star for being a recipient of the 2023 SDSU Outstanding Global Service Award!
+
+</title>
+        <meta name="Description" content="" />
+        <meta name="Keywords" content="" />
+    </ouc:properties>
+
+    <ouc:properties label="config">
+        <parameter section="Hero Content" group="Everyone" type="select" name="banner-content" prompt="Banner Content" alt="Select banner type.">
+            <option value="default" selected="true">Default</option>
+            <option value="minimal" selected="false">Minimal</option>
+            <option value="image" selected="false">Image</option>
+            <option value="short-image" selected="false">Short Image</option>
+        </parameter>
+        <parameter group="Everyone" type="select" name="chevron-color" prompt="Chevron Color" alt="Select the color to be used for the chevron at the bottom of the banner image/video.">
+            <option value="" selected="true">White</option>
+            <option value="hero__college" selected="false">Red</option>
+            <option value="hero__research" selected="false">Grey</option>
+        </parameter>
+        <parameter group="Everyone" type="checkbox" name="dark-overlay" prompt="Dark Overlay" alt="Place a dark overlay between the image/video and text (does not work with YouTube video)">
+            <option value="darken" selected="false">Enabled</option>
+        </parameter>
+        <parameter name="hero-image" type="filechooser" group="Everyone" prompt="Hero Image" alt="Please enter hero image or leave blank to display no hero image." dependency="yes"></parameter>
+        <parameter group="Everyone" type="select" name="hero-image-x" prompt="Hero Image Position X" alt="Select how the image should be positioned horizontally within the hero area.">
+            <option value="hero__left" selected="false">Left</option>
+            <option value="" selected="true">Center</option>
+            <option value="hero__right" selected="false">Right</option>
+        </parameter>
+        <parameter group="Everyone" type="select" name="hero-image-y" prompt="Hero Image Position Y" alt="Select how the image should be positioned vertically within the hero area.">
+            <option value="hero__top" selected="false">Top</option>
+            <option value="" selected="true">Center</option>
+            <option value="hero__bottom" selected="false">Bottom</option>
+        </parameter>
+        <parameter name="hero-video" type="text" group="Everyone" prompt="Hero Video" alt="Please use a YouTube embed link e.g. https://youtube.com/embed/u31qwQUeGuM"></parameter>
+        <parameter group="Everyone" type="text" name="intro" prompt="Intro Text" alt="Please enter the page's introductory text."></parameter>
+
+        <parameter section="Byline" type="checkbox" group="Everyone" name="expanded-byline" prompt="Expanded Byline" alt="Expanded byline displays author and date on separate lines and includes day of the week in the date.">
+            <option value="yes" selected="false">Use Expanded Byline</option>
+        </parameter>
+        <parameter type="checkbox" name="social-buttons" group="Everyone" prompt="Include Share Links" alt="Add share buttons for Facebook, LinkedIn, Twitter, and Email.">
+            <option value="yes" selected="false">Include Social Media Links</option>
+        </parameter>
+        <parameter type="text" group="Everyone" name="news-share-text" prompt="Share Link Text" alt="Input the text to be used for the Share Link"></parameter>
+        <parameter type="filechooser" group="Everyone" name="news-share-url" prompt="Share Link Destination" alt="Choose a page/file or enter a URL as the destination for the Share Link." source="staging" dependency="yes"></parameter>
+
+        <parameter section="Tags" group="Everyone" type="text" name="hide-tags" prompt="Hide Tags" alt="Enter a comma-separated list of 1 or more tags which will not be displayed on the page."></parameter>
+
+        <parameter section="Editable Regions" group="Everyone" type="checkbox" name="content-regions" prompt="Editable Region" alt="Turn on/off content elements to customize the layout.">
+            <option value="region-1" selected="true">Region 1</option>
+            <option value="news-sidebar" selected="true">Sidebar</option>
+            <option value="region-2" selected="true">Region 2</option>
+            <option value="region-3" selected="true">Region 3</option>
+            <option value="region-4" selected="true">Region 4</option>
+            <option value="region-5" selected="true">Region 5</option>
+            <option value="region-6" selected="true">Region 6</option>
+            <option value="region-7" selected="true">Region 7</option>
+            <option value="region-8" selected="true">Region 8</option>
+            <option value="region-9" selected="true">Region 9</option>
+            <option value="region-10" selected="true">Region 10</option>
+        </parameter>
+    </ouc:properties>
+
+    <ouc:properties label="pre-footer">
+        <parameter section="Featured Articles" name="next-article" type="filechooser" group="Everyone" prompt="Next Story" alt="Select an article to be featured as the Next Story" filter="pcf" source="staging" dependency="yes"></parameter>
+        <parameter name="more-from" type="text" group="Everyone" prompt="More From" alt="Enter a tag to be used to feature additional articles."></parameter>
+        <parameter section="Pre-Footer" name="news-pre-footer" type="checkbox" group="Everyone" prompt="Display News Pre-Footer" alt="Check to display the news pre-footer. The news pre-footer will be displayed above the site pre-footer and/or the SDSU footer.">
+            <option value="yes" selected="false">Yes</option>
+        </parameter>
+        <parameter name="pre-footer" type="checkbox" group="Everyone" prompt="Display Site Pre-Footer" alt="Check to display the site pre-footer. The pre-footer will be dislayed above the SDSU footer.">
+            <option value="yes" selected="true">Yes</option>
+        </parameter>
+    </ouc:properties>
+
+    <ouc:properties label="meta-tags">
+        <parameter section="Social Meta Tags" name="override-og-type" type="text" group="Everyone" prompt="Og Type" alt="Please enter the open graph type. Enter 'article' unless you can provide the required fields for other types.">article</parameter>
+        <parameter name="override-og-image" type="filechooser" group="Everyone" prompt="Og Image" alt="Please choose the open graph image." dependency="yes"></parameter>
+        <parameter name="override-og-image-alt" type="text" group="Everyone" prompt="Og Image Alt" alt="Please enter the open graph image alt text."></parameter>
+        <parameter name="override-og-description" type="textarea" group="Everyone" prompt="Og Description" alt="Please enter the open graph description." rows="7"></parameter>
+        <parameter name="override-twitter-card-description" type="text" group="Everyone" prompt="Twitter Card Description" alt="Please enter the twitter card description. This description will trimmed at 200 characters per Twitter Documentation."></parameter>
+        <parameter name="override-twitter-card-image" type="filechooser" group="Everyone" prompt="Twitter Card Image" alt="Please choose the twitter card image. This image size needs to be below 5MB in size per Twitter Documentation." dependency="yes"></parameter>
+        <parameter name="override-twitter-card-image-alt" type="text" group="Everyone" prompt="Twitter Card Image Alt" alt="Please enter the twitter card image alt text. This alt text will be trimmed at a length of 420 characters per Twitter Documentation."></parameter>
+        <parameter name="override-twitter-card-type" type="select" group="Everyone" prompt="Twitter Card Type" alt="Please choose the twitter card type.">
+            <option value="summary" selected="false">Summary</option>
+            <option value="summary_large_image" selected="true">Summary Large Image</option>
+        </parameter>
+        <parameter name="ou-section" type="text" group="Everyone" prompt="Article Section" alt="Please enter the section name. E.g. Technology."></parameter>
+    </ouc:properties>
+
+    <ouc:properties label="seo-config">
+        <parameter section="Search Engine Optimization" name="robots" type="checkbox" group="sciences site-admin" prompt="Prevent Search Indexing" alt="Prevent this page from being listed by search engines. Note: if the page is already listed, it may take some time to be removed using this method.">
+            <option value="noindex" selected="false">Do Not Show in Search Results</option>
+        </parameter>
+        <parameter name="redirect-type" group="sciences page-redirect" type="radio" prompt="Redirect Type" alt="Choose whether to use a temporary or permanent redirect to the location set in Redirect Destination.">
+            <option value="" selected="true">No Redirect</option>
+            <option value="302" selected="false">Temporary Redirect</option>
+            <option value="301" selected="false">Permanent Redirect</option>
+        </parameter>
+        <parameter name="redirect-destination" group="sciences page-redirect" type="filechooser" dependency="yes" lockout="no" prompt="Redirect Destination" alt="Enter a URL or select a file which users will be redirected to when visiting this page (if Redirect Type is set)."></parameter>
+    </ouc:properties>
+
+    <parameter name="dsn">news</parameter>
+    <parameter name="page-type">wysiwyg</parameter>
+
+    <item>
+        <ouc:div label="title" group="Everyone" button="hide">
+            <ouc:multiedit type="text" prompt="Title" alt="Enter title to be displayed on this page and on the listing page." section="General Information" />Congratulations to Dr. Van der Star for being a recipient of the 2023 SDSU Outstanding Global Service Award!
+
+
+        </ouc:div>
+        <ouc:div label="item_date" group="Everyone" button="hide">
+            <ouc:multiedit type="datetime" prompt="Date" alt="Enter date to be displayed on this page and on the listing page." />10/30/2023 12:00:00 AM</ouc:div>
+        <ouc:div label="author" group="Everyone" button="hide">
+            <ouc:multiedit type="text" prompt="Author" alt="Enter author to be displayed on this page and on the listing page. When entering multiple authors, use semicolons (;) between author names." />
+        </ouc:div>
+        <ouc:div label="image" group="Everyone" button="hide">
+            <ouc:multiedit type="image" prompt="Featured Image" alt="Select an image to be displayed in the article. Please use an image that is under 200KB, 720x405px or 16:9 aspect ratio with minimum width of 700px." lockout="yes" /><img src="" alt="" />
+        </ouc:div>
+        <ouc:div label="image_caption" group="Everyone" button="hide">
+            <ouc:multiedit type="text" prompt="Image Caption" alt="Set an optional caption to be displayed below the Featured Image in the detail page." />
+        </ouc:div>
+        <ouc:div label="thumbnail" group="Everyone" button="hide">
+            <ouc:multiedit type="image" prompt="Image Thumbnail" alt="Select an image to be displayed in the news listing and feed components. Please use an image that is under 200KB, 720x405px or 16:9 aspect ratio with minimum width of 700px." lockout="yes" /><img src="" alt="" />
+        </ouc:div>
+        <ouc:div label="video" group="Everyone" button="hide">
+            <ouc:multiedit type="filechooser" prompt="Featured Video" alt="Please use a YouTube embed link e.g. https://youtube.com/embed/u31qwQUeGuM" />
+        </ouc:div>
+        <ouc:div label="summary" group="Everyone" button="hide">
+            <ouc:multiedit type="textarea" prompt="Summary" alt="Enter summary, this will show up on the listing page" rows="8" />Dr. Arjan van der Star honored with SDSU's 2023 Outstanding Global Service Award for impactful global contributions.
+        </ouc:div>
+        <ouc:div label="href" group="Everyone" button="hide" xml="exclude">
+            <ouc:multiedit type="filechooser" prompt="URL" alt="Enter URL for remote article. Leave blank to link to this page." />
+        </ouc:div>
+    </item>
+
+    <ouc:div label="region-1" group="Everyone" button-text="Region 1">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="maincontent" />
+        We are thrilled to announce that Dr. Arjan van der Star, Research Assistant Professor in the Department of Psychology, has been awarded the 2023 Outstanding Global Service Award at SDSU.The award celebrates scholars whose work have made a significant impact on global communities. Congratulations, Dr. van der Star, on this well-deserved honor!
+    </ouc:div>
+
+    <ouc:div label="news-sidebar" group="Everyone" button-text="Sidebar">
+        <ouc:editor toolbar="News Sidebar" csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="sidebar" />
+
+    </ouc:div>
+
+    <ouc:div label="region-2" group="Everyone" button-text="Region 2">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+    </ouc:div>
+
+    <ouc:div label="region-3" group="Everyone" button-text="Region 3">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+    </ouc:div>
+
+    <ouc:div label="region-4" group="Everyone" button-text="Region 4">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+    </ouc:div>
+
+    <ouc:div label="region-5" group="Everyone" button-text="Region 5">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+    </ouc:div>
+
+    <ouc:div label="region-6" group="Everyone" button-text="Region 6">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+    </ouc:div>
+
+    <ouc:div label="region-7" group="Everyone" button-text="Region 7">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+    </ouc:div>
+
+    <ouc:div label="region-8" group="Everyone" button-text="Region 8">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+    </ouc:div>
+
+    <ouc:div label="region-9" group="Everyone" button-text="Region 9">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+    </ouc:div>
+
+    <ouc:div label="region-10" group="Everyone" button-text="Region 10">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width" />
+
+    </ouc:div>
+
+</document>
