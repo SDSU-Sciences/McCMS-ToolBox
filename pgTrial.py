@@ -146,7 +146,7 @@ for i, row in df.iterrows():   # ✅ this defines 'i'
             #     date_obj = datetime.strptime(replace_text, "%Y-%m-%d %H:%M:%S")
             #     replace_text = date_obj.strftime("%m/%d/%Y %I:%M:%S %p")
             replace_text = clean_html(replace_text)
-            if column_name in ["Primary Column","First Name","Last Name","Credentials (Ex. B.S. )","Pronouns","Entry Year","Program","Bio","Email","Phone", "Location","Mail Code","Fax", "Links", "Accounts","Areas of Expertise","Mentors","Details","Education","Presentations", "Grants","Clinical Trials", "Awards and Honors", "Patents and Copyrights", "Media", "Fun Facts","Image","File Name"]:
+            if column_name in ["Primary Column","First Name","Last Name","Display Name","Title","Suffix","Pronouns","Entry Year","Campus","Partner Instituition","Division","Organizational Unit","Program Area","Bio","Email","Phone Number", "Building/Location","Street Address Line 1","Street Address Line 2","City","State","Zip Code","Office Hours","Mail Code", "Links", "Courses","Student Opportunities","Mentors","Research Area","Accounts","Areas of Expertise","Education","Presentations", "Service", "Grants","Clinical Trials", "Awards and Honors", "Patents and Copyrights", "Media", "Fun Facts","Image","File Name"]:
                 replace_arr = replace_text.split("\n")
                 if len(replace_arr) > 0:
                     replace_text = "<ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'>"
