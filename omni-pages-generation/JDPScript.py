@@ -57,28 +57,33 @@ print("Columns in sheet:", list(df.columns))
 # ---------------------------------------------------------
 # SAFE FILE NAMES
 # ---------------------------------------------------------
-def make_safe_filename(name, idx):
-    s = "" if name is None else str(name).strip()
-    if not s:
-        s = f"row-{idx+1}"
+def make_filename_from_name(first, last, idx):
+    first = "" if pd.isna(first) else str(first).strip().lower()
+    last = "" if pd.isna(last) else str(last).strip().lower()
 
-    bad_chars = r'<>:"/\\|?*\t'
-    s = s.translate({ord(c): "_" for c in bad_chars})
-    s = re.sub(r"[ ]{2,}", " ", s)
-    s = re.sub(r"_{2,}", "_", s)
-    s = s.strip(" .")
+    name = f"{first}-{last}".strip("-")
 
-    if not s:
-        s = f"row-{idx+1}"
+    if not name:
+        name = f"row-{idx+1}"
 
-    return s
+    # Replace spaces with hyphens
+    name = re.sub(r"\s+", "-", name)
 
-# column MUST be "File Name"
-COL = "File Name"
-if COL not in df.columns:
-    raise KeyError(f'"{COL}" column not found. Available: {list(df.columns)}')
+    # Remove invalid filename characters
+    name = re.sub(r'[<>:"/\\|?*]', "", name)
 
-safe_names = [make_safe_filename(v, i) for i, v in enumerate(df[COL].tolist())]
+    # Collapse multiple hyphens
+    name = re.sub(r"-{2,}", "-", name)
+
+    return name
+
+
+safe_names = [
+    make_filename_from_name(row["First Name"], row["Last Name"], i)
+    for i, row in df.iterrows()
+]
+
+
 
 # handle duplicate names
 seen = {}
