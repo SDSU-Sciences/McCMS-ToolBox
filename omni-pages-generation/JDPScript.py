@@ -6,7 +6,9 @@
 #
 # WARNING: Replace any raw "&" in the sheet with "&amp;" or HTML breaks.
 
-#Change the template name accordingly. Change the folder name inside project folder. Currently it is sesh.
+#Change Sheet ID in line 20.
+#Change the template name accordingly. 
+#Change the folder name inside project folder. Currently it is sesh.
 
 import smartsheet
 import pandas as pd
@@ -99,7 +101,7 @@ subfolder_path.mkdir(parents=True, exist_ok=True)
 print("Writing to:", subfolder_path.resolve())
 
 # load template
-template_path = Path("omni-pages-generation/templates/Latest-template-profile.txt")
+template_path = Path("omni-pages-generation/templates/JDPstudentsTemplate.txt")
 template_file_content = template_path.read_text(encoding="utf-8")
 
 # ---------------------------------------------------------
