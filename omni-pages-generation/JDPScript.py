@@ -6,7 +6,7 @@
 #
 # WARNING: Replace any raw "&" in the sheet with "&amp;" or HTML breaks.
 
-#Change Sheet ID in line 20.
+#Change Sheet ID in line 20. Add access token in line 17.
 #Change the template name accordingly. 
 #Change the folder name inside project folder. Currently it is sesh.
 
