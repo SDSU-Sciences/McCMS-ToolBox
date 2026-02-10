@@ -39,8 +39,7 @@ def clean_html(text):
 # LOAD SMARTSHEET DATA
 # ---------------------------------------------------------
 smartsheet_client = smartsheet.Smartsheet('v2JfboaYuoy1IMnWR1Fh2XXYXodJXikVOlpel')
-
-sheet = smartsheet_client.Sheets.get_sheet('c86wqf5x54fvVqCmj77X3cQVFp8FRM62VWg9pj81')
+sheet = smartsheet_client.Sheets.get_sheet('GJGV9MRPm982VqxvCwJ9FhFVQM9jmmqcXCqRhFc1')
 data = []
 
 for row in sheet.rows:
@@ -106,7 +105,7 @@ subfolder_path.mkdir(parents=True, exist_ok=True)
 print("Writing to:", subfolder_path.resolve())
 
 # load template
-template_path = Path("omni-pages-generation/templates/JDPstudentsTemplate.txt")
+template_path = Path("templates/BsMsStudentsTemplate.txt")
 template_file_content = template_path.read_text(encoding="utf-8")
 
 # ---------------------------------------------------------
@@ -125,9 +124,9 @@ LIST_FIELDS = [
     "Primary Column","First Name","Last Name","Display Name","Title","Suffix","Pronouns", "Department",
     "Entry Year","Campus","Partner Instituition","Division","Organizational Unit","Program Area",
     "Bio","E-mail","Phone Number","Building/Location","Street Address Line 1",
-    "Street Address Line 2","City","State","Zip Code","Office Hours","Mail Code","Lab URL",
+    "Street Address Line 2","City","State","Zip Code","Office Hours","Mail Code",
     "Links","Courses","Student Opportunities","Mentors","Research Area","Accounts",
-    "Areas of Expertise","Education","Presentations","Service","Publications","Certifications","Interests"
+    "Areas of Expertise","Education","Presentations","Service","Publications","Certifications","Interests",
     "Grants","Clinical Trials","Awards and Honors","Patents and Copyrights",
     "Media","Fun Facts","File Name"
 ]
