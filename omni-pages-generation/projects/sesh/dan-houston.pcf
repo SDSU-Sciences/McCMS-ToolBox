@@ -287,14 +287,8 @@
         alt="Override the default report ID."
       />
     </ouc:div>
-    <ouc:div label="expertise" group="Everyone" button="hide">
-      <ouc:multiedit
-        type="text"
-        prompt="Area of Expertise"
-        alt="Enter subjects or areas of expertise."
-        section="Experts Directory"
-      />
-    </ouc:div>
+    
+    <ouc:div label="expertise" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Area of Expertise" alt="Enter subjects or areas of expertise." section="Experts Directory"/></ouc:div>
 		
 	</item>
 
