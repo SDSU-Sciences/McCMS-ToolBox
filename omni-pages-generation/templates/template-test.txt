@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/xsl/crimson/faculty-profile-v2.xsl" site="templates" title="Profile" extension="aspx"?>
+<?pcf-stylesheet path="/xsl/crimson/_dmc/_core/single-item-xml.xsl" site="templates" title="XML" extension="xml" alternate="yes" ?>
+
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd">
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<headcode></headcode><!-- before closing head tag -->
+	<bodycode></bodycode><!-- after opening body tag -->
+	<footcode></footcode><!-- before closing body tag -->
+	<ouc:info><tcf>faculty-profile-v2.tcf</tcf><tmpl>faculty-profile-v2.tmpl</tmpl></ouc:info>
+
+	<ouc:properties label="metadata">
+		        <title><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Display Name|||</li></ul></title>
+		<meta name="Description" content="" />
+		<meta name="Keywords" content="" />
+	</ouc:properties>
+
+	<ouc:properties label="config">
+		<parameter section="Hero Content" group="" type="select" name="hero-background" prompt="Background Color" alt="Select the background color to be used for the hero section.">
+			<option value="red" selected="true">Red</option>
+			<option value="gray" selected="false">Gray</option>
+		</parameter>
+
+		<parameter section="Show/Hide Header Fields" name="show-title" group="Everyone" type="select" prompt="Title" alt="Default will show the title unless it is hidden by the _props.pcf or a directory variable. Show or Hide will override a value set elsewhere.">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+		<parameter name="show-department" group="Everyone" type="select" prompt="Department" alt="Default will show the department unless it is hidden by the _props.pcf or a directory variable. Show or Hide will override a value set elsewhere">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+		<parameter name="show-program" group="Everyone" type="select" prompt="Program Area" alt="Default will show the program unless it is hidden by the _props.pcf or a directory variable. Show or Hide will override a value set elsewhere">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+		<parameter name="show-unit" group="Everyone" type="select" prompt="Organizational Unit" alt="Default will show the unit unless it is hidden by the _props.pcf or a directory variable. Show or Hide iwill override a value set elsewhere">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+		<parameter name="show-division" group="Everyone" type="select" prompt="Division" alt="Default will show the division unless it is hidden by the _props.pcf or a directory variable. Show or Hide implies override.">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+		<parameter name="show-region" group="Everyone" type="select" prompt="Location: Region" alt="Default will show the region unless it is hidden by the _props.pcf or a directory variable. Show or Hide implies override. (Region may be listed as Campus on some sites.)">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+
+		<parameter section="Editable Regions" group="Everyone" type="checkbox" name="content-regions" prompt="Editable Region" alt="Turn on/off content elements to customize the layout.">
+			<option value="bio" selected="true">Bio</option>
+			<option value="education" selected="true">Education</option>
+			<option value="specialization" selected="true">Areas of Specialization</option>
+			<option value="interests" selected="true">Interests</option>
+			<option value="certifications" selected="true">Certifications</option>
+			<option value="languages" selected="true">Languages</option>
+			<option value="fun-facts" selected="true">Fun Facts</option>
+			<option value="mentors" selected="true">Mentors</option>
+			<option value="responsibilities" selected="true">Responsibilities</option>
+			<option value="awards-honors" selected="true">Awards &amp; Honors</option>
+			<option value="office-hours" selected="true">Office Hours</option>
+			<option value="courses" selected="true">Courses</option>
+			<option value="student-opportunities" selected="true">Student Opportunities</option>
+			<option value="research" selected="true">Research</option>
+			<option value="intellectual-contributions" selected="true">Intellectual Contributions</option>
+			<option value="directed-research" selected="true">Directed Student Research</option>
+			<option value="clinical-trials" selected="true">Clinical Trials</option>
+			<option value="grants" selected="true">Grants</option>
+			<option value="media" selected="true">Media</option>
+			<option value="presentations" selected="true">Presentations</option>
+			<option value="publications" selected="true">Publications</option>
+			<option value="exhibitions" selected="true">Exhibitions</option>
+			<option value="premieres" selected="true">Premieres</option>
+			<option value="productions" selected="true">Productions</option>
+			<option value="performances" selected="true">Performances</option>
+			<option value="service" selected="true">Service</option>
+			<option value="community-engagement" selected="true">Community Engagement</option>
+			<option value="assignments" selected="true">Assignments</option>
+			<option value="other-details" selected="true">Other Details</option>
+		</parameter>
+	</ouc:properties>
+
+	<ouc:properties label="pre-footer">
+		<parameter section="Pre-Footer" name="pre-footer" type="checkbox" group="Everyone" prompt="Display" alt="Check to display the global pre-footer.The pre-footer will be dislayed above the footer.">
+			<option value="yes" selected="false">Yes</option>
+		</parameter>
+	</ouc:properties>
+
+	<ouc:properties label="meta-tags">
+		<parameter section="Social Meta Tags" name="override-og-type" type="text" group="Everyone" prompt="Og Type" alt="Please enter the open graph type. Enter 'website' unless you can provide the required fields for other types."></parameter>
+		<parameter name="override-og-image" type="filechooser" group="Everyone" prompt="Og Image" alt="Please choose the open graph image." dependency="yes"></parameter>
+		<parameter name="override-og-image-alt" type="text" group="Everyone" prompt="Og Image Alt" alt="Please enter the open graph image alt text."></parameter>
+		<parameter name="override-og-description" type="textarea" group="Everyone" prompt="Og Description" alt="Please enter the open graph description." rows="7"></parameter>
+		<parameter name="override-twitter-card-description" type="text" group="Everyone" prompt="Twitter Card Description" alt="Please enter the twitter card description. This description will trimmed at 200 characters per Twitter Documentation."></parameter>
+		<parameter name="override-twitter-card-image" type="filechooser" group="Everyone" prompt="Twitter Card Image" alt="Please choose the twitter card image. This image size needs to be below 5MB in size per Twitter Documentation." dependency="yes"></parameter>
+		<parameter name="override-twitter-card-image-alt" type="text" group="Everyone" prompt="Twitter Card Image Alt" alt="Please enter the twitter card image alt text. This alt text will be trimmed at a length of 420 characters per Twitter Documentation."></parameter>
+		<parameter name="override-twitter-card-type" type="select" group="Everyone" prompt="Twitter Card Type" alt="Please choose the twitter card type.">
+			<option value="summary" selected="false">Summary</option>
+			<option value="summary_large_image" selected="true">Summary Large Image</option>
+		</parameter>
+	</ouc:properties>
+
+	<ouc:properties label="seo-config">
+		<parameter section="Search Engine Optimization" name="robots" type="checkbox" group="sciences site-admin" prompt="Prevent Search Indexing" alt="Prevent this page from being listed by search engines. Note: if the page is already listed, it may take some time to be removed using this method.">
+			<option value="noindex" selected="false">Do Not Show in Search Results</option>
+		</parameter>
+	</ouc:properties>
+
+	<parameter name="dsn">faculty</parameter>
+	<parameter name="page-type">wysiwyg</parameter>
+
+	<item>
+		<ouc:div label="prefix" group="Everyone" button="hide"><ouc:multiedit section="Personal Info" type="text" prompt="Prefix" alt="Prefix or abbreviated title (e.g. Mx., Prof., or Mrs.)." /></ouc:div>
+		<ouc:div label="first-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="First Name" />|||First Name|||</ouc:div>
+		<ouc:div label="last-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Last Name" />|||Last Name|||</ouc:div>
+		<ouc:div label="suffix" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Suffix" />|||Suffix|||</ouc:div>
+		<ouc:div label="display-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Display Name" alt="If provided, overrides Prefix, First Name, Last Name, and Suffix for display purposes. First and Last Name fields will still be used for sorting purposes on the list." /></ouc:div>
+		<ouc:div label="pronouns" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Pronouns" alt="Enter preferred personal pronouns (ie. They/Them)." />|||Pronouns|||</ouc:div>
+		<ouc:div label="sort-order" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Sort Order" alt="Numeric value to override alphabetic sorting (Optional), e.g. to place the Dean at the top of the list, enter '1', or to push someone to the bottom of the list, enter a value &amp;gt; 1000." /></ouc:div>
+
+		<ouc:div label="image" group="Everyone" button="hide"><ouc:multiedit type="image" prompt="Image" alt="Select a profile photo. Use a square image that is at least 300x300 pixels." path="/images/faculty" lockout="no"/><img src="" alt="" /></ouc:div>
+
+		<ouc:div label="reports-to" group="Everyone" button="hide"><ouc:multiedit section="Organizational Structure" type="filechooser" prompt="Reports to" alt="Select the profile of the individual this person reports to." /></ouc:div>
+		<ouc:div label="type" group="Everyone" button="hide"><ouc:multiedit section="Affiliation" type="radio" prompt="Type" options="Faculty:Faculty;Staff:Staff;Student:Student;Lecturer:Lecturer;Other:Other" />|||Affiliation|||</ouc:div>
+		<ouc:div label="title" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Title" />|||Title|||</ouc:div>
+
+		
+		<ouc:div label="department" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Department" />|||Department|||</ouc:div>
+		<ouc:div label="program" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Program Area" />|||Program Area|||</ouc:div>
+		<ouc:div label="unit" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Organizational Unit" />|||Organizational Unit|||</ouc:div>
+		<ouc:div label="division" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Division" />|||Division|||</ouc:div>
+
+		<ouc:div label="campus-location" group="Everyone" button="hide"><ouc:multiedit type="radio" prompt="Campus" options="SDSU:SDSU;SDSU Georgia:SDSU Georgia;SDSU Imperial Valley:SDSU Imperial Valley;SDSU Mission Valley:SDSU Mission Valley;" />|||Campus|||</ouc:div>
+		<ouc:div label="partner-institution" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Partner Institution" />|||Partner Institution|||</ouc:div>
+
+		<ouc:div label="email" group="Everyone" button="hide"><ouc:multiedit section="Email" type="text" prompt="Email" alt="e.g. email@sdsu.edu" />|||E-mail|||</ouc:div>
+		<ouc:div label="email-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Email Label" alt="Label for Email Address (Optional)." /></ouc:div>
+		<ouc:div label="email-alt" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Email" alt="e.g. email@sdsu.edu" /></ouc:div>
+		<ouc:div label="email-alt-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Email Label" alt="Label for Alt. Email Address (Optional)." /></ouc:div>
+
+		<ouc:div label="phone" group="Everyone" button="hide"><ouc:multiedit section="Phone/Fax" type="text" prompt="Phone" alt="e.g. 000-000-0000 " />|||Phone Number|||</ouc:div>
+		<ouc:div label="phone-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Phone Label" alt="Label for Phone (Optional)." /></ouc:div>
+		<ouc:div label="phone-alt" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Phone" alt="e.g. 000-000-0000 " /></ouc:div>
+		<ouc:div label="phone-alt-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Phone Label" alt="Label for Alt. Phone (Optional)." /></ouc:div>
+		<ouc:div label="fax" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Fax" alt="e.g. 000-000-0000 " /></ouc:div>
+
+		<ouc:div label="building" group="Everyone" button="hide"><ouc:multiedit
+      type="select"
+      prompt="Building"
+      options=":;Adams Humanities:AH;Administration (Imperial Valley):ADM;Administration:AD;Arena Meeting Center:AMC;Art Gallery (Imperial Valley):GAL;Art North:ARTN;Art South:ARTS;Arts and Letters:AL;Atkinson Hall:ATH;Auditorium/Classrooms (Imperial Valley):A/C;Aztec Aquaplex:POOL;Aztec Court at Peterson Gym:PG;Aztec Recreation Center:ARC;Aztec Tennis Center:TNCT;Brawley Initial Building:BIB;Business Services:BS;Calpulli Center:CLP;Chapultepec Residence Hall:CHAP;Chemical Sciences Laboratory:CSL;Children's Center:UCC;Cholula Community Center:CHOL;Classrooms (Imperial Valley):CLBL;CLAT Classrooms (Imperial Valley):CLAT;College Square:COSQ;Communication:COM;Computer Building/Campus Store (Imperial Valley):COBL;Conrad Prebys Aztec Student Union:ASU;Cuicacalli Suites:CUIC;Donald P. Shiley BioScience Center:BSCI;Dramatic Arts:DA;East Commons:EC;Education:ED;Engineering and Interdisciplinary Sciences Complex:EIS;Engineering:E;Exercise and Nutritional Science:ENS;Extended Studies Center:ESC;Facilities Services:FS;Faculty Office Building East (Imperial Valley):FOBE;Faculty Office Building West (Imperial Valley):FOBW;Fowler Athletics Center:FAC;Gateway Center:GC;Geology Mathematics Computer Science:GMCS;Granada Apartments:GOH;Hardy Memorial Tower:HT;Hepner Hall:HH;Housing Administration Residential Education:HA;International Student Center:ISC;KPBS Radio/TV:KPBS;Lamden Hall:LH;Library (Imperial Valley):LIB;Library Addition (Imperial Valley):LIBA;Life Sciences North:LSN;Life Sciences South:LSS;Little Theatre:LT;Love Library Administration:LLA;Malcom A. Love Library:LL;Manchester Hall:MH;Maya Hall:MAYA;Mission Bay Aquatic Center:MBAC;Music:MU;Nasatir Hall:NH;North Classrooms (Imperial Valley):NCB;North Education:NE;Olmeca Hall:OLME;Parma Payne Goodall Alumni Center:ALUM;Physical Plant (Imperial Valley):PHPL;Physical Sciences:PS;Physics Astronomy:PA;Physics:P;Piedra Del Sol Apartments:PDS;Professional Studies and Fine Arts:PSFA;SDSU Bookstore:BOOK;SDSU Passport Office:ISCT;South Campus Plaza:SCP;Speech, Language, and Hearing Sciences:SLHS;Storm Hall West:SHW;Storm Hall:SH;Student Affairs (Imperial Valley):STAT;Student Center (Imperial Valley):STCT;Student Services East:SSE;Student Services West:SSW;Tenochca Hall:TENO;University Towers:UT;Villa Alvarado Apartments:VAA;West Commons:WC;Women's Resource Center:WRCT;Zura Hall:ZURA;"
+      section="Building/Location"
+    />|||Building/Location|||</ouc:div>
+    <ouc:div label="room-number" group="Everyone" button="hide">
+      <ouc:multiedit type="text" prompt="Room Number" />
+    </ouc:div>
+    <ouc:div
+      label="street-address-1"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="text"
+      prompt="Street Address Line 1"
+      alt="First line of street address, e.g. 5500 Campanile Drive"
+    />|||Street Address Line 1|||</ouc:div>
+    <ouc:div
+      label="street-address-2"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="text"
+      prompt="Street Address Line 2"
+      alt="Second line of street address, e.g. room number"
+    />|||Street Address Line 2|||</ouc:div>
+    <ouc:div label="city" group="Everyone" button="hide"><ouc:multiedit
+      type="text"
+      prompt="City"
+    />|||City|||</ouc:div>
+    <ouc:div label="state" group="Everyone" button="hide"><ouc:multiedit
+      type="text"
+      prompt="State/Region"
+    />|||State|||</ouc:div>
+    <ouc:div label="zip" group="Everyone" button="hide"><ouc:multiedit
+      type="text"
+      prompt="Zip/Postal Code"
+    />|||Zip Code|||</ouc:div>
+    <ouc:div label="mail-code" group="Everyone" button="hide"><ouc:multiedit
+      type="text"
+      prompt="Mail Code"
+    />|||Mail Code|||</ouc:div>
+    <ouc:div label="file-link" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="filechooser"
+        prompt="File"
+        alt="Select a file that user can download from the profile."
+        section="Links"
+      />
+    </ouc:div>
+    <ouc:div label="file-label" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="text"
+        prompt="File Label"
+        alt="Enter text to label or describe file."
+      />
+    </ouc:div>
+    <ouc:div label="website-1" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="filechooser"
+        prompt="Website 1"
+        alt="Enter link for personal website."
+      />
+    </ouc:div>
+    <ouc:div
+      label="website-1-label"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="text"
+      prompt="Website 1 Label"
+      alt="Enter text to label the link for Website 1."
+    />Website</ouc:div>
+    <ouc:div label="website-2" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="filechooser"
+        prompt="Website 2"
+        alt="Enter link for personal website."
+      />
+    </ouc:div>
+    <ouc:div
+      label="website-2-label"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="text"
+      prompt="Website 2 Label"
+      alt="Enter text to label the link for Website 2."
+    />Website</ouc:div>
+    <ouc:div label="website-3" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="filechooser"
+        prompt="Website 3"
+        alt="Enter link for personal website."
+      />
+    </ouc:div>
+    <ouc:div
+      label="website-3-label"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="text"
+      prompt="Website 3 Label"
+      alt="Enter text to label the link for Website 3."
+    />Website</ouc:div>
+    <ouc:div
+      label="faculty-success"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="checkbox"
+      prompt="Faculty Success"
+      alt="Select to show Faculty Success items on profile."
+      options="Show Faculty Success:Show Faculty Success;"
+      section="Faculty Success"
+    />Show Faculty Success</ouc:div>
+    <ouc:div label="faculty-success-id" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="text"
+        prompt="Faculty Success Profile ID"
+        alt="Enter the Faculty Success ID if it does not match the filename."
+      />
+    </ouc:div>
+    <ouc:div label="faculty-success-client-id" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="text"
+        prompt="Faculty Success Client ID"
+        alt="Override the Client ID, should only be needed for faculty who use Faculty Success in other colleges."
+      />
+    </ouc:div>
+    <ouc:div label="faculty-success-report-id" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="text"
+        prompt="Faculty Success Report ID"
+        alt="Override the default report ID."
+      />
+    </ouc:div>
+    <ouc:div label="expertise" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="text"
+        prompt="Area of Expertise"
+        alt="Enter subjects or areas of expertise."
+        section="Experts Directory"
+      />
+    </ouc:div>
+		
+	</item>
+
+	<ouc:div label="bio" group="Everyone" button-text="Bio">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="maincontent" />|||Bio|||
+	</ouc:div>
+
+	 <ouc:div label="education" group="Everyone" button-text="Education">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Education|||</li></ul>
+    </ouc:div>
+
+    <ouc:div label="specialization" group="Everyone" button-text="Areas of Specialization">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Areas of Specialization|||</li></ul></p>
+    </ouc:div>
+     
+    <ouc:div label="interests" group="Everyone" button-text="Interests">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>|||Interests|||  
+    </ouc:div>
+    
+    <ouc:div label="certifications" group="Everyone" button-text="Certifications">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>|||Certifications|||
+    </ouc:div>
+    
+    <ouc:div label="languages" group="Everyone" button-text="Languages">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="fun-facts" group="Everyone" button-text="Fun Facts">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+     |||Fun Facts|||   
+    </ouc:div>
+
+    <ouc:div label="mentors" group="Everyone" button-text="Mentors: (for students)">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+       |||Mentors|||  
+    </ouc:div>
+    
+    <ouc:div label="responsibilities" group="Everyone" button-text="Responsibilities">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        
+    </ouc:div>
+    
+    <ouc:div label="awards-honors" group="Everyone" button-text="Awards and Honors">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Awards and Honors|||</li></ul></p>    
+    <ol></ol></ouc:div>
+    
+     <ouc:div label="office-hours" group="Everyone" button-text="Office Hours"><ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>|||Office Hours||| 
+</ouc:div> 
+
+    <ouc:div label="courses" group="Everyone" button-text="Courses">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>|||Courses|||
+    </ouc:div>
+
+     <ouc:div label="student-opportunities" group="Everyone" button-text="Student Opportunities">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        |||Student Opportunities|||
+    </ouc:div> 
+    
+    <ouc:div label="research" group="Everyone" button-text="Research">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+      |||Research|||
+    </ouc:div>
+    
+    <ouc:div label="intellectual-contributions" group="Everyone" button-text="Intellectual Contributions">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="directed-research" group="Everyone" button-text="Directed Student Research">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+
+    <ouc:div label="clinical-trials" group="Everyone" button-text="Clinical Trials">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Clinical Trials|||</li></ul></p>
+    </ouc:div>
+
+    <ouc:div label="grants" group="Everyone" button-text="Grants">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Grants|||</li></ul></p>
+    </ouc:div>
+
+    <ouc:div label="media" group="Everyone" button-text="Media">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        |||Media|||
+    </ouc:div>
+
+    <ouc:div label="presentations" group="Everyone" button-text="Presentations">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Presentations|||</li></ul></p>
+    </ouc:div>
+
+    <ouc:div label="publications" group="Everyone" button-text="Publications">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Publications|||</li></ul></p>
+    </ouc:div>
+    
+    <ouc:div label="exhibitions" group="Everyone" button-text="Exhibitions">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="premieres" group="Everyone" button-text="Premieres">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="productions" group="Everyone" button-text="Productions">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="performances" group="Everyone" button-text="Performances">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+
+    <ouc:div label="service" group="Everyone" button-text="Service">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Service|||</li></ul></p>
+    </ouc:div>
+    
+    <ouc:div label="community-engagement" group="Everyone" button-text="Community Engagement">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="assignments" group="Everyone" button-text="Assignments">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+
+    <ouc:div label="other-details" group="Everyone" button-text="Other Details">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+	
+</document>
