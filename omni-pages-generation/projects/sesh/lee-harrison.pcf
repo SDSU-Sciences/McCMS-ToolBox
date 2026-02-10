@@ -265,7 +265,7 @@
       alt="Select to show Faculty Success items on profile."
       options="Show Faculty Success:Show Faculty Success;"
       section="Faculty Success"
-    />Show Faculty Success</ouc:div>
+    /></ouc:div>
     <ouc:div label="faculty-success-id" group="Everyone" button="hide">
       <ouc:multiedit
         type="text"

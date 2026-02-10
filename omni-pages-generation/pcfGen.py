@@ -1,14 +1,18 @@
 # TO RUN THE SCRIPT
 # In root directory: 
-#   - add folder "data" -> put excel sheet here
+#   - Add correct Access token and Sheet ID in LOAD SMARTSHEET DATA section of code
 #   - add folder "templates" -> put template-profile.txt here
-# Run: python script.py
-#
-# WARNING: Replace any raw "&" in the sheet with "&amp;" or HTML breaks.
+#   - The profiles will be generated inside projects/sesh folder. If you are generating many then change the folder name of sesh to something meaningful.
+# Run: python pcfGen.py
 
-#Change Sheet ID in line 20. Add access token in line 17.
-#Change the template name accordingly. 
-#Change the folder name inside project folder. Currently it is sesh.
+#Access Token:
+#v2JfboaYuoy1IMnWR1Fh2XXYXodJXikVOlpel
+
+#For reference, Sheet ID's
+# Lecturer & Staff - VxGX9jgQ4vR64FJm4hqM7FVqMwq6wwp3Chfw6j81
+# JDP Students - c86wqf5x54fvVqCmj77X3cQVFp8FRM62VWg9pj81
+# Faculty Profile - 6xGcpc9v5mjQ5VRFx93mCVphgWFhQHwh3JWV8CC1
+# B&M Students - GJGV9MRPm982VqxvCwJ9FhFVQM9jmmqcXCqRhFc1
 
 import smartsheet
 import pandas as pd
@@ -59,7 +63,10 @@ def clean_html(text):
 # ---------------------------------------------------------
 # LOAD SMARTSHEET DATA
 # ---------------------------------------------------------
+#Access Token from Smartsheet API to pull data. Get this from Smartsheet owner account.
 smartsheet_client = smartsheet.Smartsheet('v2JfboaYuoy1IMnWR1Fh2XXYXodJXikVOlpel')
+
+#Add Sheet ID here. Get this from the url of the sheet in Smartsheet.
 sheet = smartsheet_client.Sheets.get_sheet('VxGX9jgQ4vR64FJm4hqM7FVqMwq6wwp3Chfw6j81')
 
 data = []
@@ -124,7 +131,7 @@ subfolder_path.mkdir(parents=True, exist_ok=True)
 print("Writing to:", subfolder_path.resolve())
 
 # load template
-template_path = Path("templates/template-test.txt")
+template_path = Path("templates/template-pcfGen.txt")
 template_file_content = template_path.read_text(encoding="utf-8")
 
 # ---------------------------------------------------------
