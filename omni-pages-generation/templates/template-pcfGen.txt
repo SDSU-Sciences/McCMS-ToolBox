@@ -293,11 +293,11 @@
 	</item>
 
 	<ouc:div label="bio" group="Everyone" button-text="Bio">
-		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="maincontent" />|||Bio|||
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="maincontent" /><p>|||Bio|||</p>
 	</ouc:div>
 
 	 <ouc:div label="education" group="Everyone" button-text="Education">
-        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Education|||</li></ul>
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'>|||Education|||</li></ul></p>
     </ouc:div>
 
     <ouc:div label="specialization" group="Everyone" button-text="Areas of Specialization">
@@ -305,11 +305,11 @@
     </ouc:div>
      
     <ouc:div label="interests" group="Everyone" button-text="Interests">
-        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>|||Interests|||  
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p>|||Interests|||</p>
     </ouc:div>
     
     <ouc:div label="certifications" group="Everyone" button-text="Certifications">
-        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>|||Certifications|||
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p>|||Certifications|||</p>
     </ouc:div>
     
     <ouc:div label="languages" group="Everyone" button-text="Languages">
@@ -317,13 +317,13 @@
     </ouc:div>
     
     <ouc:div label="fun-facts" group="Everyone" button-text="Fun Facts">
-        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-     |||Fun Facts|||   
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p>
+     |||Fun Facts||| </p>
     </ouc:div>
 
     <ouc:div label="mentors" group="Everyone" button-text="Mentors: (for students)">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-       |||Mentors|||  
+      <p>|||Mentors|||</p>
     </ouc:div>
     
     <ouc:div label="responsibilities" group="Everyone" button-text="Responsibilities">
@@ -350,7 +350,7 @@
     
     <ouc:div label="research" group="Everyone" button-text="Research">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-      |||Research|||
+      <p>|||Research|||</p>
     </ouc:div>
     
     <ouc:div label="intellectual-contributions" group="Everyone" button-text="Intellectual Contributions">
@@ -373,7 +373,7 @@
 
     <ouc:div label="media" group="Everyone" button-text="Media">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-        |||Media|||
+        <p>|||Media|||</p>
     </ouc:div>
 
     <ouc:div label="presentations" group="Everyone" button-text="Presentations">
