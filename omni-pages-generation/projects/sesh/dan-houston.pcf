@@ -10,7 +10,7 @@
 	<ouc:info><tcf>faculty-profile-v2.tcf</tcf><tmpl>faculty-profile-v2.tmpl</tmpl></ouc:info>
 
 	<ouc:properties label="metadata">
-		        <title><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></title>
+		        <title></title>
 		<meta name="Description" content="" />
 		<meta name="Keywords" content="" />
 	</ouc:properties>
