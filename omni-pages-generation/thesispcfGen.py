@@ -152,7 +152,7 @@ for name in safe_names:
 LIST_FIELDS = [
     "Primary Column","First Name","Last Name","Display Name","Department",
     "Program","Thesis Title","Date of Defense","Time","Location", "Zoom", "Committee Members", "Abstract"
-    "File Name"
+    "File Name","Tags"
 ]
 
 sheet_column_titles = set(df.columns)

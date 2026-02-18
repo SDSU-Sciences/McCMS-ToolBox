@@ -141,7 +141,7 @@
 				</div>
 				<div class="flex-item" style="flex: 0 1 500px">
 					<h2>|||Display Name|||</h2>
-					<p><strong>Program: </strong>|||Program|||<br /><strong>Date:</strong> |||Date of Defense|||<br /><strong>Time:</strong> |||Time|||<br /><strong>Location:</strong> |||Location|||<br /><strong>Zoom: </strong><a href="|||Zoom|||">|||Zoom|||</a></p>
+					<p><strong>Department: </strong>|||Department|||<strong>Program: </strong>|||Program|||<br /><strong>Date:</strong> |||Date of Defense|||<br /><strong>Time:</strong> |||Time|||<br /><strong>Location:</strong> |||Location|||<br /><strong>Zoom: </strong><a href="|||Zoom|||">|||Zoom|||</a></p>
 					<h3>Committee Members</h3>
 					<p>
 						|||Committee Members|||
