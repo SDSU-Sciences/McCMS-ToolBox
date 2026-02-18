@@ -113,7 +113,7 @@
 
 	<item>
 		<ouc:div label="title" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Title" alt="Enter title to be displayed on this page and on the listing page." section="General Information"/>|||Thesis Title|||</ouc:div>
-		<ouc:div label="item_date" group="Everyone" button="hide"><ouc:multiedit type="datetime" prompt="Date" alt="Enter date to be displayed on this page and on the listing page."/>05/27/2025 07:19:22 PM</ouc:div>
+		<ouc:div label="item_date" group="Everyone" button="hide"><ouc:multiedit type="datetime" prompt="Date" alt="Enter date to be displayed on this page and on the listing page."/></ouc:div>
 		<ouc:div label="author" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Author" alt="Enter author to be displayed on this page and on the listing page. When entering multiple authors, use semicolons (;) between author names."/></ouc:div>
 		<ouc:div label="image" group="Everyone" button="hide"><ouc:multiedit type="image" prompt="Featured Image" alt="Select an image to be displayed in the article. Please use an image that is under 200KB, 720x405px or 16:9 aspect ratio with minimum width of 700px." lockout="yes"/><img src="" alt="" /></ouc:div>
 		<ouc:div label="image_caption" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Image Caption" alt="Set an optional caption to be displayed below the Featured Image in the detail page."/></ouc:div>
@@ -143,10 +143,7 @@
 					<h2>|||Display Name|||</h2>
 					<p><strong>Department: </strong>|||Department|||<br /><strong>Program: </strong>|||Program|||<br /><strong>Date:</strong> |||Date of Defense|||<br /><strong>Time:</strong> |||Time|||<br /><strong>Location:</strong> |||Location|||<br /><strong>Zoom: </strong><a href="|||Zoom|||">|||Zoom|||</a></p>
 					<h3>Committee Members</h3>
-					<p>
-						|||Committee Members|||
-						
-					</p>
+					<p>|||Committee Members|||</p>
 					<br />
 					<h3>Abstract</h3>
 					<p>|||Abstract|||</p>
