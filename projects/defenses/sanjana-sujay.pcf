@@ -10,7 +10,7 @@
 	<ouc:info><tcf>news-article.tcf</tcf><tmpl>news-article.tmpl</tmpl></ouc:info>
 
 	<ouc:properties label="metadata">
-		<title>|||Thesis Title|||</title>
+		<title>title</title>
 		<meta name="Description" content="" />
 		<meta name="Keywords" content="" />
 	</ouc:properties>
@@ -112,14 +112,14 @@
 	<parameter name="page-type">wysiwyg</parameter>
 
 	<item>
-		<ouc:div label="title" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Title" alt="Enter title to be displayed on this page and on the listing page." section="General Information"/>|||Thesis Title|||</ouc:div>
+		<ouc:div label="title" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Title" alt="Enter title to be displayed on this page and on the listing page." section="General Information"/>title</ouc:div>
 		<ouc:div label="item_date" group="Everyone" button="hide"><ouc:multiedit type="datetime" prompt="Date" alt="Enter date to be displayed on this page and on the listing page."/>05/27/2025 07:19:22 PM</ouc:div>
 		<ouc:div label="author" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Author" alt="Enter author to be displayed on this page and on the listing page. When entering multiple authors, use semicolons (;) between author names."/></ouc:div>
 		<ouc:div label="image" group="Everyone" button="hide"><ouc:multiedit type="image" prompt="Featured Image" alt="Select an image to be displayed in the article. Please use an image that is under 200KB, 720x405px or 16:9 aspect ratio with minimum width of 700px." lockout="yes"/><img src="" alt="" /></ouc:div>
 		<ouc:div label="image_caption" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Image Caption" alt="Set an optional caption to be displayed below the Featured Image in the detail page."/></ouc:div>
 		<ouc:div label="thumbnail" group="Everyone" button="hide"><ouc:multiedit type="image" prompt="Image Thumbnail" alt="Select an image to be displayed in the news listing and feed components. Please use an image that is under 200KB, 720x405px or 16:9 aspect ratio with minimum width of 700px." lockout="yes"/><img src="/_resources/images/banner-patterns-eric-gray.png" alt="Bush" /></ouc:div>
 		<ouc:div label="video" group="Everyone" button="hide"><ouc:multiedit type="filechooser" prompt="Featured Video" alt="Please use a YouTube embed link e.g. https://youtube.com/embed/u31qwQUeGuM"/></ouc:div>
-		<ouc:div label="summary" group="Everyone" button="hide"><ouc:multiedit type="textarea" prompt="Summary" alt="Enter summary, this will show up on the listing page" rows="8"/>|||Display Name||| | |||Date of Defense|||</ouc:div>
+		<ouc:div label="summary" group="Everyone" button="hide"><ouc:multiedit type="textarea" prompt="Summary" alt="Enter summary, this will show up on the listing page" rows="8"/>Sanjana Sujay | Monday, December 10,2025</ouc:div>
 		<ouc:div label="href" group="Everyone" button="hide" xml="exclude"><ouc:multiedit type="filechooser" prompt="URL" alt="Enter URL for remote article. Leave blank to link to this page."/></ouc:div>
 	</item>
 
@@ -140,16 +140,22 @@
 					<img src="/people/_resources/images/default-profile-image-300.jpg" alt="Display Name" style="border-radius: 50%;" />
 				</div>
 				<div class="flex-item" style="flex: 0 1 500px">
-					<h2>|||Display Name|||</h2>
-					<p><strong>Department: </strong>|||Department|||<br /><strong>Program: </strong>|||Program|||<br /><strong>Date:</strong> |||Date of Defense|||<br /><strong>Time:</strong> |||Time|||<br /><strong>Location:</strong> |||Location|||<br /><strong>Zoom: </strong><a href="|||Zoom|||">|||Zoom|||</a></p>
+					<h2>Sanjana Sujay</h2>
+					<p><strong>Department: </strong>Department of Biology<br /><strong>Program: </strong>M.S. in Marine Biology<br /><strong>Date:</strong> Monday, December 10,2025<br /><strong>Time:</strong> 2:00 pm<br /><strong>Location:</strong> Donald P. Shiley BioScience Center (BSCI)<br /><strong>Zoom: </strong><a href="https://sdsu.zoom.us/j/89934883401">https://sdsu.zoom.us/j/89934883401</a></p>
 					<h3>Committee Members</h3>
 					<p>
-						|||Committee Members|||
+						Eric Ackerman<br/>Sanjana Sujay<br/>Sukanya Solase
 						
 					</p>
 					<br />
 					<h3>Abstract</h3>
-					<p>|||Abstract|||</p>
+					<p>Background and aims In Mediterranean shrublands, periodic wildfires and nitrogen (N) availability define the response traits of plants, which produces cascading effects on community productivity and soil fertility. In the endangered southern California coastal sage scrub (CSS) habitat, N is a key limiting nutrient that is easily lost after wildfire. The regrowth of the climax plant community hinges upon early successional fire followers with specialized N acquisition traits, such as N-fixers that are presumed to enhance soil fertility in many habitats. However, their effect remains understudied in CSS, as well there are other understudied N acquisition traits like underground storage structures called rhizomes that may also retain N after wildfire.
+
+Therefore, this research investigates how a diversity of perennial fire followers collectively influence N retention, including Acmispon glaber, Eriodictyon crassifolium, Malacothamnus fasciculatus, and Salvia mellifera. Methods This study examined a three-year-old post-burn CSS preserve in San Marcos, California. We analyzed response traits by measuring N pools and 15N from leaves and seeds. We assessed effect traits by quantifing aboveground biomass, litter N and C:N, soil N pools, soil 15N, and soil N cycling rates.
+
+Results Acmispon glaber fixed 100% of its N, however soil N was not enhanced. Instead, this obligate seeder resorbed most of the N before litterfall and allocated much to its N to N-rich seeds. Surprisingly, the rhizomatous Malacothamnus fasciculatus synthesized the most N rich leaves without the trait of fixation. As well, the rhizomatous species resorbed the most N before litterfall, which suggests they translocated N to their rhizomes that may lead to greater N retention post-fire.
+
+Overall, all fire followers produced negative rates of net mineralization suggesting microbial immobilization that temporarily reduced plant-available N. Conclusions These results test assumptions about N fixers by uncovering alternative pathways for the fate of N after wildfire. Additionally, we highlight how coexisting species with complementary traits collectively reduce post-fire losses and facilitate the regrowth of the climax community. As anthropogenic land-use changes and climate instability leads to uncertain secondary succession, understanding the mechanisms that strengthen the resilience of imperiled habitats is essential.</p>
 				</div>
 			</div>
 		</div>
