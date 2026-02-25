@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/xsl/crimson/faculty-profile-v2.xsl" site="templates" title="Profile" extension="aspx"?>
+<?pcf-stylesheet path="/xsl/crimson/_dmc/_core/single-item-xml.xsl" site="templates" title="XML" extension="xml" alternate="yes" ?>
+
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd">
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<headcode></headcode><!-- before closing head tag -->
+	<bodycode></bodycode><!-- after opening body tag -->
+	<footcode></footcode><!-- before closing body tag -->
+	<ouc:info><tcf>faculty-profile-v2.tcf</tcf><tmpl>faculty-profile-v2.tmpl</tmpl></ouc:info>
+
+	<ouc:properties label="metadata">
+		<title>J. David Archibald</title>
+		<meta name="Description" content="" />
+		<meta name="Keywords" content="" />
+	</ouc:properties>
+
+	<ouc:properties label="config">
+		<parameter section="Hero Content" group="" type="select" name="hero-background" prompt="Background Color" alt="Select the background color to be used for the hero section.">
+			<option value="red" selected="true">Red</option>
+			<option value="gray" selected="false">Gray</option>
+		</parameter>
+
+		<parameter section="Show/Hide Header Fields" name="show-title" group="Everyone" type="select" prompt="Title" alt="Default will show the title unless it is hidden by the _props.pcf or a directory variable. Show or Hide will override a value set elsewhere.">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+		<parameter name="show-department" group="Everyone" type="select" prompt="Department" alt="Default will show the department unless it is hidden by the _props.pcf or a directory variable. Show or Hide will override a value set elsewhere">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+		<parameter name="show-program" group="Everyone" type="select" prompt="Program Area" alt="Default will show the program unless it is hidden by the _props.pcf or a directory variable. Show or Hide will override a value set elsewhere">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+		<parameter name="show-unit" group="Everyone" type="select" prompt="Organizational Unit" alt="Default will show the unit unless it is hidden by the _props.pcf or a directory variable. Show or Hide iwill override a value set elsewhere">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+		<parameter name="show-division" group="Everyone" type="select" prompt="Division" alt="Default will show the division unless it is hidden by the _props.pcf or a directory variable. Show or Hide implies override.">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+		<parameter name="show-region" group="Everyone" type="select" prompt="Location: Region" alt="Default will show the region unless it is hidden by the _props.pcf or a directory variable. Show or Hide implies override. (Region may be listed as Campus on some sites.)">
+			<option value="" selected="true">Default</option>
+			<option value="true" selected="false">Show</option>
+			<option value="false" selected="false">Hide</option>
+		</parameter>
+
+		<parameter section="Editable Regions" group="Everyone" type="checkbox" name="content-regions" prompt="Editable Region" alt="Turn on/off content elements to customize the layout.">
+			<option value="bio" selected="true">Bio</option>
+			<option value="education" selected="true">Education</option>
+			<option value="specialization" selected="true">Areas of Specialization</option>
+			<option value="interests" selected="true">Interests</option>
+			<option value="certifications" selected="true">Certifications</option>
+			<option value="languages" selected="true">Languages</option>
+			<option value="fun-facts" selected="true">Fun Facts</option>
+			<option value="mentors" selected="true">Mentors</option>
+			<option value="responsibilities" selected="true">Responsibilities</option>
+			<option value="awards-honors" selected="true">Awards &amp; Honors</option>
+			<option value="office-hours" selected="true">Office Hours</option>
+			<option value="courses" selected="true">Courses</option>
+			<option value="student-opportunities" selected="true">Student Opportunities</option>
+			<option value="research" selected="true">Research</option>
+			<option value="intellectual-contributions" selected="true">Intellectual Contributions</option>
+			<option value="directed-research" selected="true">Directed Student Research</option>
+			<option value="clinical-trials" selected="true">Clinical Trials</option>
+			<option value="grants" selected="true">Grants</option>
+			<option value="media" selected="true">Media</option>
+			<option value="presentations" selected="true">Presentations</option>
+			<option value="publications" selected="true">Publications</option>
+			<option value="exhibitions" selected="true">Exhibitions</option>
+			<option value="premieres" selected="true">Premieres</option>
+			<option value="productions" selected="true">Productions</option>
+			<option value="performances" selected="true">Performances</option>
+			<option value="service" selected="true">Service</option>
+			<option value="community-engagement" selected="true">Community Engagement</option>
+			<option value="assignments" selected="true">Assignments</option>
+			<option value="other-details" selected="true">Other Details</option>
+		</parameter>
+	</ouc:properties>
+
+	<ouc:properties label="pre-footer">
+		<parameter section="Pre-Footer" name="pre-footer" type="checkbox" group="Everyone" prompt="Display" alt="Check to display the global pre-footer.The pre-footer will be dislayed above the footer.">
+			<option value="yes" selected="false">Yes</option>
+		</parameter>
+	</ouc:properties>
+
+	<ouc:properties label="meta-tags">
+		<parameter section="Social Meta Tags" name="override-og-type" type="text" group="Everyone" prompt="Og Type" alt="Please enter the open graph type. Enter 'website' unless you can provide the required fields for other types."></parameter>
+		<parameter name="override-og-image" type="filechooser" group="Everyone" prompt="Og Image" alt="Please choose the open graph image." dependency="yes"></parameter>
+		<parameter name="override-og-image-alt" type="text" group="Everyone" prompt="Og Image Alt" alt="Please enter the open graph image alt text."></parameter>
+		<parameter name="override-og-description" type="textarea" group="Everyone" prompt="Og Description" alt="Please enter the open graph description." rows="7"></parameter>
+		<parameter name="override-twitter-card-description" type="text" group="Everyone" prompt="Twitter Card Description" alt="Please enter the twitter card description. This description will trimmed at 200 characters per Twitter Documentation."></parameter>
+		<parameter name="override-twitter-card-image" type="filechooser" group="Everyone" prompt="Twitter Card Image" alt="Please choose the twitter card image. This image size needs to be below 5MB in size per Twitter Documentation." dependency="yes"></parameter>
+		<parameter name="override-twitter-card-image-alt" type="text" group="Everyone" prompt="Twitter Card Image Alt" alt="Please enter the twitter card image alt text. This alt text will be trimmed at a length of 420 characters per Twitter Documentation."></parameter>
+		<parameter name="override-twitter-card-type" type="select" group="Everyone" prompt="Twitter Card Type" alt="Please choose the twitter card type.">
+			<option value="summary" selected="false">Summary</option>
+			<option value="summary_large_image" selected="true">Summary Large Image</option>
+		</parameter>
+	</ouc:properties>
+
+	<ouc:properties label="seo-config">
+		<parameter section="Search Engine Optimization" name="robots" type="checkbox" group="sciences site-admin" prompt="Prevent Search Indexing" alt="Prevent this page from being listed by search engines. Note: if the page is already listed, it may take some time to be removed using this method.">
+			<option value="noindex" selected="false">Do Not Show in Search Results</option>
+		</parameter>
+	</ouc:properties>
+
+	<parameter name="dsn">faculty</parameter>
+	<parameter name="page-type">wysiwyg</parameter>
+
+	<item>
+		<ouc:div label="prefix" group="Everyone" button="hide"><ouc:multiedit section="Personal Info" type="text" prompt="Prefix" alt="Prefix or abbreviated title (e.g. Mx., Prof., or Mrs.)." /></ouc:div>
+		<ouc:div label="first-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="First Name" />J.</ouc:div>
+		<ouc:div label="last-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Last Name" />Archibald</ouc:div>
+		<ouc:div label="suffix" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Suffix" />Ph.D.</ouc:div>
+		<ouc:div label="display-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Display Name" alt="If provided, overrides Prefix, First Name, Last Name, and Suffix for display purposes. First and Last Name fields will still be used for sorting purposes on the list." />J. David Archibald</ouc:div>
+		<ouc:div label="pronouns" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Pronouns" alt="Enter preferred personal pronouns (ie. They/Them)." />David</ouc:div>
+		<ouc:div label="sort-order" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Sort Order" alt="Numeric value to override alphabetic sorting (Optional), e.g. to place the Dean at the top of the list, enter '1', or to push someone to the bottom of the list, enter a value &amp;gt; 1000." /></ouc:div>
+
+		<ouc:div label="image" group="Everyone" button="hide"><ouc:multiedit type="image" prompt="Image" alt="Select a profile photo. Use a square image that is at least 300x300 pixels." path="/images/faculty" lockout="no"/><img src="https://biology.sdsu.edu/wp-content/uploads/profiles/david-archibald-300.jpg" alt="Closeup of silhouette" /></ouc:div>
+
+		<ouc:div label="reports-to" group="Everyone" button="hide"><ouc:multiedit section="Organizational Structure" type="filechooser" prompt="Reports to" alt="Select the profile of the individual this person reports to." /></ouc:div>
+		<ouc:div label="type" group="Everyone" button="hide"><ouc:multiedit section="Affiliation" type="radio" prompt="Type" options="Faculty:Faculty;Staff:Staff;Student:Student;Lecturer:Lecturer;Other:Other" /></ouc:div>
+		<ouc:div label="title" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Title" />Professor Emeritus of Biology</ouc:div>
+
+		
+		<ouc:div label="department" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Department" />Department of Biology</ouc:div>
+		<ouc:div label="program" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Program Area" />College of Sciences</ouc:div>
+		<ouc:div label="unit" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Organizational Unit" /></ouc:div>
+		<ouc:div label="division" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Division" /></ouc:div>
+
+		<ouc:div label="campus-location" group="Everyone" button="hide"><ouc:multiedit type="radio" prompt="Campus" options="SDSU:SDSU;SDSU Georgia:SDSU Georgia;SDSU Imperial Valley:SDSU Imperial Valley;SDSU Mission Valley:SDSU Mission Valley;" /></ouc:div>
+		<ouc:div label="partner-institution" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Partner Institution" /></ouc:div>
+
+		<ouc:div label="email" group="Everyone" button="hide"><ouc:multiedit section="Email" type="text" prompt="Email" alt="e.g. email@sdsu.edu" />darchibald@sdsu.edu</ouc:div>
+		<ouc:div label="email-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Email Label" alt="Label for Email Address (Optional)." /></ouc:div>
+		<ouc:div label="email-alt" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Email" alt="e.g. email@sdsu.edu" /></ouc:div>
+		<ouc:div label="email-alt-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Email Label" alt="Label for Alt. Email Address (Optional)." /></ouc:div>
+
+		<ouc:div label="phone" group="Everyone" button="hide"><ouc:multiedit section="Phone/Fax" type="text" prompt="Phone" alt="e.g. 000-000-0000 " />619-933-3075</ouc:div>
+		<ouc:div label="phone-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Phone Label" alt="Label for Phone (Optional)." /></ouc:div>
+		<ouc:div label="phone-alt" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Phone" alt="e.g. 000-000-0000 " /></ouc:div>
+		<ouc:div label="phone-alt-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Phone Label" alt="Label for Alt. Phone (Optional)." /></ouc:div>
+		<ouc:div label="fax" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Fax" alt="e.g. 000-000-0000 " /></ouc:div>
+
+		<ouc:div label="building" group="Everyone" button="hide"><ouc:multiedit
+      type="select"
+      prompt="Building"
+      options=":;Adams Humanities:AH;Administration (Imperial Valley):ADM;Administration:AD;Arena Meeting Center:AMC;Art Gallery (Imperial Valley):GAL;Art North:ARTN;Art South:ARTS;Arts and Letters:AL;Atkinson Hall:ATH;Auditorium/Classrooms (Imperial Valley):A/C;Aztec Aquaplex:POOL;Aztec Court at Peterson Gym:PG;Aztec Recreation Center:ARC;Aztec Tennis Center:TNCT;Brawley Initial Building:BIB;Business Services:BS;Calpulli Center:CLP;Chapultepec Residence Hall:CHAP;Chemical Sciences Laboratory:CSL;Children's Center:UCC;Cholula Community Center:CHOL;Classrooms (Imperial Valley):CLBL;CLAT Classrooms (Imperial Valley):CLAT;College Square:COSQ;Communication:COM;Computer Building/Campus Store (Imperial Valley):COBL;Conrad Prebys Aztec Student Union:ASU;Cuicacalli Suites:CUIC;Donald P. Shiley BioScience Center:BSCI;Dramatic Arts:DA;East Commons:EC;Education:ED;Engineering and Interdisciplinary Sciences Complex:EIS;Engineering:E;Exercise and Nutritional Science:ENS;Extended Studies Center:ESC;Facilities Services:FS;Faculty Office Building East (Imperial Valley):FOBE;Faculty Office Building West (Imperial Valley):FOBW;Fowler Athletics Center:FAC;Gateway Center:GC;Geology Mathematics Computer Science:GMCS;Granada Apartments:GOH;Hardy Memorial Tower:HT;Hepner Hall:HH;Housing Administration Residential Education:HA;International Student Center:ISC;KPBS Radio/TV:KPBS;Lamden Hall:LH;Library (Imperial Valley):LIB;Library Addition (Imperial Valley):LIBA;Life Sciences North:LSN;Life Sciences South:LSS;Little Theatre:LT;Love Library Administration:LLA;Malcom A. Love Library:LL;Manchester Hall:MH;Maya Hall:MAYA;Mission Bay Aquatic Center:MBAC;Music:MU;Nasatir Hall:NH;North Classrooms (Imperial Valley):NCB;North Education:NE;Olmeca Hall:OLME;Parma Payne Goodall Alumni Center:ALUM;Physical Plant (Imperial Valley):PHPL;Physical Sciences:PS;Physics Astronomy:PA;Physics:P;Piedra Del Sol Apartments:PDS;Professional Studies and Fine Arts:PSFA;SDSU Bookstore:BOOK;SDSU Passport Office:ISCT;South Campus Plaza:SCP;Speech, Language, and Hearing Sciences:SLHS;Storm Hall West:SHW;Storm Hall:SH;Student Affairs (Imperial Valley):STAT;Student Center (Imperial Valley):STCT;Student Services East:SSE;Student Services West:SSW;Tenochca Hall:TENO;University Towers:UT;Villa Alvarado Apartments:VAA;West Commons:WC;Women's Resource Center:WRCT;Zura Hall:ZURA;"
+      section="Building/Location"
+    /></ouc:div>
+    <ouc:div label="room-number" group="Everyone" button="hide">
+      <ouc:multiedit type="text" prompt="Room Number" />
+    </ouc:div>
+    <ouc:div
+      label="street-address-1"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="text"
+      prompt="Street Address Line 1"
+      alt="First line of street address, e.g. 5500 Campanile Drive"
+    /></ouc:div>
+    <ouc:div
+      label="street-address-2"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="text"
+      prompt="Street Address Line 2"
+      alt="Second line of street address, e.g. room number"
+    /></ouc:div>
+    <ouc:div label="city" group="Everyone" button="hide"><ouc:multiedit
+      type="text"
+      prompt="City"
+    /></ouc:div>
+    <ouc:div label="state" group="Everyone" button="hide"><ouc:multiedit
+      type="text"
+      prompt="State/Region"
+    /></ouc:div>
+    <ouc:div label="zip" group="Everyone" button="hide"><ouc:multiedit
+      type="text"
+      prompt="Zip/Postal Code"
+    /></ouc:div>
+    <ouc:div label="mail-code" group="Everyone" button="hide"><ouc:multiedit
+      type="text"
+      prompt="Mail Code"
+    />[1234]</ouc:div>
+    <ouc:div label="file-link" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="filechooser"
+        prompt="File"
+        alt="Select a file that user can download from the profile."
+        section="Links"
+      />
+    </ouc:div>
+    <ouc:div label="file-label" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="text"
+        prompt="File Label"
+        alt="Enter text to label or describe file."
+      />
+    </ouc:div>
+    <ouc:div label="website-1" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="filechooser"
+        prompt="Website 1"
+        alt="Enter link for personal website."
+      />
+    </ouc:div>
+    <ouc:div
+      label="website-1-label"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="text"
+      prompt="Website 1 Label"
+      alt="Enter text to label the link for Website 1."
+    />Website</ouc:div>
+    <ouc:div label="website-2" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="filechooser"
+        prompt="Website 2"
+        alt="Enter link for personal website."
+      />
+    </ouc:div>
+    <ouc:div
+      label="website-2-label"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="text"
+      prompt="Website 2 Label"
+      alt="Enter text to label the link for Website 2."
+    />Website</ouc:div>
+    <ouc:div label="website-3" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="filechooser"
+        prompt="Website 3"
+        alt="Enter link for personal website."
+      />
+    </ouc:div>
+    <ouc:div
+      label="website-3-label"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="text"
+      prompt="Website 3 Label"
+      alt="Enter text to label the link for Website 3."
+    />Website</ouc:div>
+    <ouc:div
+      label="faculty-success"
+      group="Everyone"
+      button="hide"
+    ><ouc:multiedit
+      type="checkbox"
+      prompt="Faculty Success"
+      alt="Select to show Faculty Success items on profile."
+      options="Show Faculty Success:Show Faculty Success;"
+      section="Faculty Success"
+    /></ouc:div>
+    <ouc:div label="faculty-success-id" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="text"
+        prompt="Faculty Success Profile ID"
+        alt="Enter the Faculty Success ID if it does not match the filename."
+      />
+    </ouc:div>
+    <ouc:div label="faculty-success-client-id" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="text"
+        prompt="Faculty Success Client ID"
+        alt="Override the Client ID, should only be needed for faculty who use Faculty Success in other colleges."
+      />
+    </ouc:div>
+    <ouc:div label="faculty-success-report-id" group="Everyone" button="hide">
+      <ouc:multiedit
+        type="text"
+        prompt="Faculty Success Report ID"
+        alt="Override the default report ID."
+      />
+    </ouc:div>
+    
+    <ouc:div label="expertise" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Area of Expertise" alt="Enter subjects or areas of expertise." section="Experts Directory"/></ouc:div>
+		
+	</item>
+
+	<ouc:div label="bio" group="Everyone" button-text="Bio">
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="maincontent" />
+<p>J. David Archibald, Professor Emeritus, Department of Biology, College of Sciences SDSU taught courses on mammals, macroevolution, biogeography, and vertebrate evolution for 34 years at SDSU and elsewhere. His research on the systematics and evolution of early mammals, biostratigraphy, faunal analysis, extinction, and evolutionary history was funded by grants from various organizations, most notably the National Science Foundation and the National Geographic Society.</p>
+    </ouc:div>
+
+	 <ouc:div label="education" group="Everyone" button-text="Education">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+<p>Ph.D. in Paleontology University of California, Berkeley, 1977 | B.A. in Geology Kent State University, Kent, Ohio, 1972</p>
+    </ouc:div>
+
+    <ouc:div label="specialization" group="Everyone" button-text="Areas of Specialization">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
+    </ouc:div>
+     
+    <ouc:div label="interests" group="Everyone" button-text="Interests">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p></p>
+    </ouc:div>
+    
+    <ouc:div label="certifications" group="Everyone" button-text="Certifications">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p></p>
+    </ouc:div>
+    
+    <ouc:div label="languages" group="Everyone" button-text="Languages">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="fun-facts" group="Everyone" button-text="Fun Facts">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+
+    <ouc:div label="mentors" group="Everyone" button-text="Mentors: (for students)">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+      <p></p>
+    </ouc:div>
+    
+    <ouc:div label="responsibilities" group="Everyone" button-text="Responsibilities">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        
+    </ouc:div>
+    
+    <ouc:div label="awards-honors" group="Everyone" button-text="Awards and Honors">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>    
+    <ol></ol></ouc:div>
+    
+     <ouc:div label="office-hours" group="Everyone" button-text="Office Hours"><ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+<p>By Appointment</p>
+    </ouc:div> 
+
+    <ouc:div label="courses" group="Everyone" button-text="Courses">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+
+     <ouc:div label="student-opportunities" group="Everyone" button-text="Student Opportunities">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        
+    </ouc:div> 
+    
+    <ouc:div label="research" group="Everyone" button-text="Research">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+<p>[Comma Separated, Title Case, No Period]</p>
+    </ouc:div>
+    
+    <ouc:div label="intellectual-contributions" group="Everyone" button-text="Intellectual Contributions">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="directed-research" group="Everyone" button-text="Directed Student Research">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+
+    <ouc:div label="clinical-trials" group="Everyone" button-text="Clinical Trials">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
+    </ouc:div>
+
+    <ouc:div label="grants" group="Everyone" button-text="Grants">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
+    </ouc:div>
+
+    <ouc:div label="media" group="Everyone" button-text="Media">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p></p>
+    </ouc:div>
+
+    <ouc:div label="presentations" group="Everyone" button-text="Presentations">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
+    </ouc:div>
+
+    <ouc:div label="publications" group="Everyone" button-text="Publications">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+<ul>
+  <li>Archibald, J. D. 2025. Misverstanden over Darwin, sociaaldarwinisme, eugenetica [in Dutch]. In Skepp 3:11-13.</li>
+  <li>Archibald, J. D. 2025. &quot;A new edition. revised and augmented by the author&quot; the 4th-11th American printings of Darwin&apos;s Origin of species In van Wyhe, J., ed. 2002- The Complete Work of Charles Darwin Online.</li>
+  <li>Archibald, J. D. 2025. Misrepresentation of Charles Darwin on Eugenics and Social Darwinism. In Skeptical Inquirer 29(4):6-7</li>
+  <li>Archibald, J. D. and van Wyhe, J. 2025. Satirical images of Darwin&apos;s theory of evolution: An introduction. In van Wyhe, J., ed. 2002- The Complete Work of Charles Darwin Online.</li>
+  <li>Archibald, J. D. 2025. &quot;Origins of Darwin&apos;s Evolution: Solving the Species Puzzle Through Time and Place&quot; San Diego State University Darwin Day 2025 Plenary Lecture.</li>
+  <li>Archibald, J. D. 2024. Bibliotheca Darwiniana. In Dilaura, D. L., ed. BookPageant online.</li>
+  <li>Archibald, J. D. 2024. Bibliotheca Darwiniana. In Dilaura, D. L., ed. BookPagaent.</li>
+  <li>Archibald, J. D. 2022. Freeman 375: A chimerical version of Origin of species. In van Wyhe, J., ed. 2002- The Complete Work of Charles Darwin Online.</li>
+  <li>Archibald, J. D. 2021. Charles Darwin (Critical Lives). London: Reaktion Press, 240pp.</li>
+  <li>Archibald, J. D. 2021. Opinion letter in response to &quot;Do Religion and Science Clash or Coexist. New York Times Nov. 14.</li>
+  <li>Archibald, J. D. 2020 Ungulata. In De Queiroz, K., Cantino, P., Gauthier, J. eds. Phylonyms: A Companion to the PhyloCode. Boca Raton: CRC Press, pp. 943-947.</li>
+  <li>Archibald, J. D. 2018. Marco Solinas From Aristotle&apos;s Teleology to Darwin&apos;s Genealogy: The Stamp of Inutility. Philosophical Inquires 6:R1–R3.</li>
+  <li>Archibald, J. D. 2018 Charles Darwin&apos;s Personal Library. In van Wyhe, J., ed. 2002- The Complete Work of Charles Darwin Online.</li>
+  <li>Archibald, J. D. 2018. Charles Darwin: A Reference Guide to His Life and Works. Lanham. MD: Rowman &amp; Littlefield Publishers, 232pp.</li>
+  <li>Archibald, J. D. 2017. Origins of Darwin&apos;s Evolution: Solving the Species Puzzle Through Time and Place. New York: Columbia University Press, 208pp.</li>
+  <li>Averianov, A. O. and Archibald, J. D. 2017. Therian postcranial bones from the Upper Cretaceous Bissekty Formation of Uzbekistan. Proceedings of the Zoological Institute RAS 321: 433-384.</li>
+  <li>Archibald, J. D. 2016. Book Dispatch from Rome. Hoja Volante 272:12-16.</li>
+  <li>Averianov, A. O. and Archibald, J. D. 2016. New evidence on the stem placental mammal Paranyctoides from the Upper Cretaceous of Uzbekistan. Palaeontologica Polonica 67:25-33.</li>
+  <li>Averianov, A. O. and Archibald, J. D. 2015. Evolutionary transition of dental formula in Late Cretaceous eutherian mammals. The Sciences of Nature (formerly Naturwissenschaften) 102:1-8 (online first).</li>
+  <li>Archibald, J. D. 2014. Aristotle&apos;s ladder, Darwin&apos;s Tree: The Evolution of Visual Metaphors for Biological Order. New York: Columbia University Press, 242pp.</li>
+  <li>Averianov, A. O., Archibald, J. D., Skutchas, P. P., Dyke, G. J. 2014. New mammal remains from the Late Cretaceous Bostobe Formation (Northeast Aral Sea Region, Kazakhstan). Palaeoworld 23:314-320.</li>
+  <li>Archibald, J. D. 2014. What the dinosaur record says about extinction scenarios. In Keller, G., and Kerr, A.C., eds. Volcanism, Impacts, and Mass Extinctions: Causes and Effects. Geological Society of America Special Paper 505.</li>
+  <li>Averianov, A. O., Archibald, J. D., Dyke, G. J. 2014. A new eutherian mammal from the Late Cretaceous of Kazakhstan. Acta Palaeontologica Polonica online first.</li>
+  <li>MacLeod, N., Archibald, J. D., and Levin, P., (eds). 2013. Grzimek&apos;s Animal Life Extinction. Two volumes. Detroit: Gale Cengage Learning, 964pp.</li>
+  <li>Averianov, A. O. and Archibald, J. D. 2013. Variation and taxonomy of Asiamerican eutherian mammal Paranyctoides. Canadian Journal of Earth Sciences. 50: 895-903.</li>
+  <li>Archibald, J. D. and MacLeod, N. 2013. The end-Cretaceous extinction. In MacLeod, N., Archibald, J. D., and Levin, P., eds. Grzimek&apos;s Animal Life Encyclopedia: Extinction (two volumes). Detroit: Gale Cengage Learning, pp. 497-512.</li>
+  <li>Averianov, A. O. and Archibald, J. D. 2013. New material and reinterpretation of the Late Cretaceous eutherian mammal Paranyctoides from Uzbekistan. Acta Palaeontologca Polonica. 58:17-23.</li>
+  <li>Archibald, J. D. 2012. Darwin&apos;s two competing phylogenetic trees: marsupials as ancestors or sister taxa? Archives of natural history 39:217-233.</li>
+  <li>Archibald, J. D. 2012. Dinosaur Extinction: Past and Present Perceptions. In Brett-Surman, M. K., Holtz, T. R., Farlow, J. O., and Walter, B, eds. The Complete Dinosaur, Second Edition. Bloomington: Indiana Press, pp. 1027-1038.</li>
+  <li>Archibald, J. D. 2012. Eutheria (Placental Mammals). In Encyclopedia of Life Sciences. London, Macmillan Publishers Ltd, Nature Publishing Group, www.elsnet, p. 1-4.</li>
+  <li>Chester, S. G. B., Sargis, E. J., Szalay, F. S., Archibald, J. D., and Averianov, A. O. 2012. Therian femora from the Late Cretaceous of Uzbekistan. Acta Palaeontologca Polonica. 57:53-64.</li>
+  <li>Archibald, J. D. and Averianov, A. O. 2012. Phylogenetic analysis, taxonomic revision, and dental ontogeny of the Cretaceous Zhelestidae (Mammalia: Eutheria). Zoological Journal of the Linnean Society 164:361-426.</li>
+  <li>Archibald, J. D. 2011. Extinction and Radiation: How the Fall of the Dinosaurs Led to the Rise of The Mammals. Baltimore, Johns Hopkins University Press, 120p.</li>
+  <li>Archibald, J. D. 2011. Gould&apos;s real contribution. Skeptic 16:12.</li>
+  <li>Archibald, J. D., Zhang, Y., Harper, T., and Cifelli, R. L. 2011. Protungulatum, confirmed Cretaceous occurrence of an otherwise Paleocene eutherian (placental?) mammal. Journal of Mammalian Evolution 18:153-161.</li>
+  <li>Averianov, A. O., Archibald, J. D., and Ekdale, E. G. 2010. New material of the Late Cretaceous deltatheroidan mammal Sulestes and a phylogenetic reassessment of the metatherian-eutherian dichotomy. Journal of Systematic Palaeontology 8:301-330.</li>
+  <li>Archibald, J. D. and 28 additional authors. 2010. Cretaceous extinctions: Multiple causes. Science 328:973.</li>
+  <li>Chester, S. G. B., Sargis, E. J., Szalay, F. S., Archibald, J. D., and Averianov, A. O. 2010. Mammalian distal humeri from the Late Cretaceous of Uzbekistan. Acta Palaeontologica Polonica 55:199-211.</li>
+  <li>Archibald, J. D. 2009. Edward Hitchcock&apos;s pre-Darwin (1840) &quot;Tree of life.&quot; Journal of the History of Biology. 42:561-592.</li>
+  <li>Chester, S. G. B., Sargis, E. J., Szalay, F. S., Archibald, J. D., and Averianov, A. O. 2008. Therian femora from the Late Cretaceous of Uzbekistan. Journal of Vertebrate Paleontology 28(supplement to no. 3):53A.</li>
+  <li>Archibald, J. D. and MacLeod, N. 2007. Dinosaurs, extinction theories for. Encyclopedia of Biodiversity, Elsevier, p. 1-9.</li>
+  <li>Archibald, J. D. and Averianov, A. O. 2007. Zhelestids: Stem Eutherians or basal laurasiatherians, but no evidence for placental orders in the Cretaceous. Journal of Vertebrate Paleontology 27(supplement to no. 3):41A.</li>
+  <li>Chester, S. G. B., Sargis, E. J., Szalay, F. S., Archibald, J. D., and Averianov, A. O. 2007. Functional analysis of mammalian humeri from the Late Cretaceous of Uzbekistan. Journal of Vertebrate Paleontology 27(supplement to no. 3):58A.</li>
+  <li>Zhang, Y. and Archibald, J. D. 2007. Late Cretaceous mammalian fauna from the Hell Creek Formation, southeastern Montana. Journal of Vertebrate Paleontology 27(supplement to no. 3):171A.</li>
+  <li>Archibald, J. D. 2006. Review of Mammals from the Age of Dinosaurs: Origins, Evolution, and Structure. Zofia Kielan-Jaworowska, Richard L. Cifelli, and Zhe-Xi Luo. Journal of Mammal Evolution 13:147-149.</li>
+  <li>Archibald, J. D. 2006. A cacophony of causes. Review of Extinction: How Life Nearly Ended 250 Million Years Ago by Douglas H. Erwin. Trends in Ecology and Evolution 21:428.</li>
+  <li>Averianov, A. O. and Archibald, J. D. 2006. Further data on the multituberculate mammal Uzbekbaatar from the Late Cretaceous of Uzbekistan Acta Palaeontologica Polonica. 51:377-380.</li>
+  <li>Archibald, J. D. and Averianov, A. O. 2006. Late Cretaceous asioryctitherian eutherian mammals from Uzbekistan and phylogentic analysis of Asioryctitheria. Acta Palaeontologica Polonica 51:351-376.</li>
+  <li>Archibald, J. D. 2006. Review of Mammals from the Age of Dinosaurs: Origins, Evolution, and Structure. by Zofia Kielan-Jaworowska, Richard L. Cifelli, and Zhe-Xi Luo. Journal of Mammal Evolution 13:147-149.</li>
+  <li>Archibald, J. D. and Averianov, A. O. 2006. Late Cretaceous asioryctitherian eutherian mammals from Uzbekistan and phylogentic analysis of Asioryctitheria. Acta Palaeontologca Polonica 51:351-376.</li>
+  <li>Rose, K. D. and Archibald, J. D., eds. 2005. The Rise of Placental Mammals: Origin and Relationships of the Major Extant Clades. Baltimore, Johns Hopkins University Press, 259p.</li>
+  <li>Archibald, J. D. and Averianov, A. O. 2005. Mammalian Faunal Succession in the Cretaceous of the Kyzylkum Desert. Journal of Vertebrate Paleontology 25 (supplement. to no. 3):32A.</li>
+  <li>MacLeod, N. and Archibald, J. D. 2005. Decline and fall of the non-Avian dinosurs. Journal of Vertebrate Paleontology 25 (supplement. to no. 3):87A.</li>
+  <li>Archibald, J. D. and Averianov, A. O. 2005. Mammalian Faunal Succession in the Cretaceous of the Kyzylkum Desert. Journal of Mammal Evolution 12:9-22.</li>
+  <li>Archibald, J. D. 2005. Eutheria (Placental Mammals). In Encyclopedia of Life Sciences. London, Macmillan Publishers Ltd, Nature Publishing Group, www.elsnet, p. 1-4.</li>
+  <li>Averianov, A. O. and Archibald, J. D. 2005. Mammals from the mid-Cretaceous Khodzhakul Formation, Kyzylkum Desert, Uzbekistan. Cretaceous Research 26: 593-608.</li>
+  <li>Archibald, J. D. 2005. Were dinosaurs the victims of a single catastrophe? No, it only finished them off. Natural History 114: 52-53.</li>
+  <li>Archibald, J. D. 2005. Shape of Mesozoic dinosaur richness: Comment. Geology 33: e74.</li>
+  <li>Diem, S. and Archibald, J. D. 2005. Range extension of southern chasmosaurine ceratopsian dinosaurs into northwestern Colorado. Journal of Paleontology 79: 251-258.</li>
+  <li>Archibald, J. D. and Rose, K. D. 2005. Womb with view: The Rise of Placentals. In, K. D. Rose &amp; J. D. Archibald (eds). The Rise of Placentals Mammals: Origin and Relationships of the Major Extant Clades, Baltimore, Johns Hopkins University Press, p. 1-8.</li>
+  <li>Diem, S. and Archibald, J. D. 2005. Range extension of southern chasmosaurine ceratopsian dinosaurs into northwestern Colorado. Journal of Paleontology. Journal of Paleontology 79: 251-258.</li>
+  <li>Archibald, J. D. and Fastovsky, D. E. 2004. Dinosaur extinction. In, Weishampel, D. B et al., eds., The Dinosauria. University of California Press, p.672-684.</li>
+  <li>Archibald, J. D. 2004. Eutheria (Placental Mammals). In Encyclopedia of Life Sciences. London, Macmillan Publishers Ltd, Nature Publishing Group, www.elsnet, p. 1-4.</li>
+  <li>Ekdale, E. G., Archibald, J. D., Averianov, A. O. 2004. Petrosal bones of placental mammals from the Late Cretaceous Uzbekistan. Acta Palaeontologica Polonica 49:161-176.</li>
+  <li>Archibald, J. D. 2003. Timing and biogeography of the eutherian radiation: Fossils and molecules compared. Molecular Phylogeny and Evolution 28:350-359.</li>
+  <li>Archibald, J. D. and Averianov, A. O. 2003. The Late Cretaceous eutherian mammal Kulbeckia. Journal of Vertebrate Paleontology 23:404-419.</li>
+  <li>Averianov, A. O. and Archibald, J. D. 2003. Mammals from the Upper Cretaceous Aitym Formation, Kyzylkum Desert, Uzbekistan. Cretaceous Research 24:171-191.</li>
+  <li>Averianov, A. O., Archibald, J. D. and Martin. T. 2003. Placental nature of the alleged marsupial from the Cretaceous of Madagascar. Acta Palaeontologica Polonica 48:149-151.</li>
+  <li>Archibald, J. D. 2003. A new periodical on mammals. Acta Palaeontologica Polonica 48:152.</li>
+  <li>Szalay, F. S., Sargis, E. J., Archibald, J. D. and Averianov, A.O. 2003. Late Cretaceous therian postcranials from the Kyzylkum Desert, Uzbekistan: A preliminary assessment of taxonomic properties. Journal of Vertebrate Paleontology 23(supplement. to no. 3):103A.</li>
+  <li>Archibald, J. D. 2002. Dinosaur extinction: Changing Views. Dinosaur Extinction: Changing Views, In Dinosaurs: The Science Behind the Stories, Geological Institute, p.99-106.</li>
+  <li>Hunter, J. P. and Archibald, J.D. 2002. Mammals from the end of the Age of Dinosaurs in North Dakota and southeastern Montana. Hell Creek Formation and its faunas and floras. Geological Society of America Special Paper 361:191-215.</li>
+  <li>Archibald, J. D. 2002. On the Brink, essay review of Rivers in Time: The Search for Clues to Earth&apos;s Mass Extinctions. Peter D. Ward. Biosciences. 52:445-446.</li>
+  <li>Archibald, J. D. 2002. Dinosaur extinction: Changing Views. Dinosaur Extinction: Changing Views,&quot; In Dinosaurs: The Science Behind the Stories, Geological Institute, p.99-106.</li>
+  <li>Archibald, J. D. and Averianov, A. O. 2001. Paranyctoides and allies from the Late Cretaceous of North America and Asia. Acta Palaeontologica Polonica 46:533-551.</li>
+  <li>Archibald, J. D., Averianov, A. O., and Ekdale, E. G. 2001. Late Cretaceous relatives of rabbits, rodents, and other extant eutherian mammals. Nature 414:62-65.</li>
+  <li>Archibald, J. D. and Deutschman, D. 2001. Quantitative analysis of the timing of origin of extant placental orders. Journal of Mammal Evolution 8:107-124.</li>
+  <li>Archibald, J. D. 2001. Eutheria. In Encyclopedia of Life Sciences London, Macmillan Publishers Ltd, Nature Publishing Group, www.els.net, p. 1-4.</li>
+  <li>Archibald, J. D. and Averianov, A.O. 2001. Zhelestids, archaic ungulates, and Placentalia. Journal of Vertebrate Paleontology 21(supplement. to no. 3):29A.</li>
+  <li>Ekdale, E. G., Archibald, J. D. and Averianov, A. O. 2001. Ear regions of archaic ungulates and zhelestids. Journal of Vertebrate Paleontology 21(supplement. to no. 3):47A.</li>
+  <li>Archibald, J. D. 2001. Dinosaurs, extinction theories for. In, Encyclopedia of Biodiversity, Volume 2. San Diego, Academic Press, p. 95-108.</li>
+  <li>Archibald, J. D. 2001. Eutheria. In Encyclopedia of Life Sciences. London, Macmillan Publishers Ltd, Nature Publishing Group, www.els.net, p. 1-4.</li>
+  <li>Archibald, J. D. 2000. Review of Fossil Vertebrates of Arabia: With Emphasis on the Late Miocene Faunas, Geology, and Palaeoenvironments of the Emirate of Abu Dhabi, United Arab Emirates. Peter J. Whybrow and Andrew Hill, eds. American Scientist 88:368.</li>
+  <li>Archibald, J. David. 2000. Dinosaur abundance was not declining in a &quot;3 m gap&quot; at the top of the Hell Creek Formation, Montana and North Dakota: Comment. Geology 28:1150-1151.</li>
+  <li>Diem, S. D. and Archibald, J. D. 2000. Vertebrate fauna from the Upper Cretaceous Williams Fork Formation, northwestern Colorado. Journal of Vertebrate Paleontology 20(supplement. to no. 3):38A.</li>
+  <li>Archibald D., Sues H.-D., Averianov A., Danilov I., Rezvyi A., Ward D., King C. &amp; Morris N. 1999. New paleontologic, biostratigraphic, and sedimentologic results at Dzharakuduk (U. Cret.), Kyzylkum Desert, Uzbekistan. Journal of Vertebrate Paleontology 19 (supplement. to no. 3):29A-30A.</li>
+  <li>Archibald, J. D. 1999. Pruning and grafting on the mammalian phylogenetic tree. Acta Palaeontologica Polonica 44:220-222.</li>
+  <li>Archibald, J. D. 1999. Molecular dates and the mammalian radiation. Correspondence, Trends in Ecology &amp; Evolution 14:278.</li>
+  <li>Eaton, J.G., Diem, S., Archibald, J.D., Schierup, C., and Munk, H. 1999 Vertebrate paleontology of the Upper Cretaceous rocks of the Markagunt Plateau, southwestern Utah. In, Gillette, D.D., ed. Vertebrate Fossils of Utah.</li>
+  <li>Archibald, J. D. 1999. Divergence times of mammals. Science, Technical Comment 285:2831a.</li>
+  <li>Archibald D., Sues H.-D., Averianov A., Danilov I., Rezvyi A., Ward D., King C. &amp; Morris N. 1999. New paleontologic, biostratigraphic, and sedimentologic results at Dzharakuduk (U. Cret.), Kyzylkum Desert, Uzbekistan. Journal of Vertebrate Paleontology. 19 (supplement. to no. 3):29A-30A.</li>
+  <li>Archibald, J. D. 1998. &quot;Gaps&quot; in the K-T Record. Letters, Science 279:1114-1115.</li>
+  <li>Archibald, J. D. 1998. Shiva Impact. Member&apos;s Dialogue, The Planetary Report, May/June, p.3.</li>
+  <li>Archibald, J. D. 1998. Death, Taxes, and Extinction: An Example from the Dinosaurs. National Forum, The Phi Kappa Phi Journal 78(3):28-31.</li>
+  <li>Archibald, J. D., Sues, H.-D., Averianov, A. O., King, C., Ward, D. J., Tsaruk, O. A., Danilov, I. G., Rezvyi, A. S, Veretennikov, B. G., and Khodjaev, A.).1998. Precis of the Paleontology, Biostratigraphy, and Sedimentology at Dzharakuduk (Turonian? - Santonian), Kyzylkum Desert, Uzbekistan. In, Kirkland, J. I. and Lucas, S., eds. Lower to Middle Cretaceous Terrestrial Ecosystems. New Mexico Museum of Natural History &amp; Science Bulletin 14: 21-28.</li>
+  <li>Archibald, J. D. 1998. Emerging importance of the Grand Staircase-Escalante region in Cretaceous vertebrate biostratigraphy, western U.S. Grand Staircase-Escalante National Monument Science Symposium Proceedings, pg.1-3.</li>
+  <li>Archibald, J. D. and Averianov, A. O. 1998. Eskhodnaya formula koryennukh zubov dlya platsentarnykh mlyekopetayushchekh (Mammalia, Eutheria) [Original tooth formula fundamental for placental mammals (Mammalia, Eutheria )], Otchyetnaya Nauchnaya Syesseya po Etogam Rabot 1997, 7 [in Russian]</li>
+  <li>Archibald, J. D. 1998. Archaic Ungulates (&quot;Condylartha&quot;). In , C. Janis, K. Scott, &amp; L. Jacobs, (eds.). Evolution of Tertiary Mammals of North America. Volume 1. Terrestrial Carnivores, Ungulates, and Ungulatelike Mammals. Cambridge, Cambridge University Press, p. 292-331.</li>
+  <li>Janis, C. M., Archibald, J. D., Cifelli, R. L., Lucas, S. G., Schaff, C. R., Schoch, R. M., and Williamson, T. E. 1998. Part III: Archaic Ungulates and ungulate-like mammals. In, C. Janis, K. Scott, &amp; L. Jacobs, (eds .). Evolution of Tertiary Mammals of North America. Volume 1. Terrestrial Carnivores, Ungulates, and Ungulatelike Mammals. Cambridge, Cambridge University Press, p. 247- 259.</li>
+  <li>Nessov, L. A., Archibald, J. D. (corresponding author), and Kielan-Jaworowska, Z. 1998. Ungulate-like mammals from the Late Cretaceous of Uzbekistan and a phylogenetic analysis of Ungulatomorpha. Bulletin of the Carnegie Museum of Natural History 34:40-88.</li>
+  <li>Archibald, J. D. and Averianov, A. O. 1998. Eskhodnaya formula koryennukh zubov dlya platsentarnykh mlyekopetayushchekh (Mammalia, Eutheria) [Original tooth formula fundamental for placental mammals (Mammalia, Eutheria)], Otchyetnaya Nauchnaya Syesseya po Etogam Rabot 1997, 7 [in Russian]</li>
+  <li>Archibald, J. D. 1998. Archaic Ungulates (&quot;Condylartha&quot;). In, C. Janis, K. Scott, &amp; L. Jacobs, (eds.). Evolution of Tertiary Mammals of North America. Volume 1. Terrestrial Carnivores, Ungulates, and Ungulatelike Mammals. Cambridge, Cambridge University Press, p. 292-331.</li>
+  <li>Janis, C. M., Archibald, J. D., Cifelli, R. L., Lucas, S. G., Schaff, C. R., Schoch, R. M., and Williamson, T. E. 1998. Part III: Archaic Ungulates and ungulate-like mammals. In, C. Janis, K. Scott, &amp; L. Jacobs, (eds.). Evolution of Tertiary Mammals of North America. Volume 1. Terrestrial Carnivores, Ungulates, and Ungulatelike Mammals. Cambridge, Cambridge University Press, p. 247-259.</li>
+  <li>Archibald, J. D. 1997. El Impacto del retroceso de los mares. Mundo Cientifico , 176:155-157.</li>
+  <li>Archibald, J. D. and Averianov, A.O. 1997. New evidence for the ancestral placental premolar count. Journal of Vertebrate Paleontology, 17(supplement. to no. 3):p.29A. (Archibald, J.D. and Averianov, A.O.)</li>
+  <li>Archibald, J. D. 1997. Extinction (biology). McGraw-Hill 1998 Yearbook of Science &amp;Technology, p. 129-132.</li>
+  <li>Archibald, J. D. 1997. Evolution. In, Currie, P. J. and Padian, K., eds., Encyclopedia of Dinosaurs. San Diego, Academic Press, p. 217-220.</li>
+  <li>Archibald, J. D. 1997. Extinction, In, Currie, P. J. and Padian, K., eds., Encyclopedia of Dinosaurs. San Diego, Academic Press, p. 221-229.</li>
+  <li>Archibald, J. D. 1997. Speciation. In, Currie, P. J. and Padian, K., eds., Encyclopedia of Dinosaurs. San Diego, Academic Press, p. 693-695.</li>
+  <li>Archibald, J. D. 1997. Species. In, Currie, P. J. and Padian, K., eds., Encyclopedia of Dinosaurs . San Diego, Academic Press, p. 695-699.</li>
+  <li>Archibald, J. D. 1997. El Impacto del retroceso de los mares. Mundo Cientifico, 176:155-157.</li>
+  <li>Archibald, J. D. and Averianov, A.O. 1997. New evidence for the ancestral placental premolar count. Journal of Vertebrate Paleontology, 17(supplement. to no. 3):p.29A.</li>
+  <li>Archibald, J. D. 1997. Species. In, Currie, P. J. and Padian, K., eds., Encyclopedia of Dinosaurs. San Diego, Academic Press, p. 695-699.</li>
+  <li>Archibald, J. D. 1996. Dinosaur Extinction and the End of an Era: What the Fossils Say. New York: Columbia University Press, 237p.</li>
+  <li>Archibald, J. D. 1996. L&apos;impact du retrait des mers. La Recherche 293: 67-69.</li>
+  <li>Archibald, J. D. 1996. Fossil evidence for a Late Cretaceous origin of &quot;hoofed&quot; mammals. Science 272:1150-1153.</li>
+  <li>Archibald, J. D. 1996. Testing extinction theories at the Cretaceous-Tertiary boundary using the vertebrate fossil record, In, MacLeod, N., and Keller, G., eds. The Cretaceous-Tertiary mass extinction: biotic and environmental changes. New York, W. W. Norton &amp; Co., p. 373-398.</li>
+  <li>Archibald, J. D. 1996. Dinosaur Extinction and the End of an Era: What the Fossils Say. In, Wolberg, D. L. and Stump, E., eds., Dinofest International: Symposium April 18-21, 1996, Program with Abstracts, Arizona State University, p. 25.</li>
+  <li>Archibald, J. D. 1996. Acid trauma at the Cretaceous-tertiary (K/T) boundary in eastern Montana: Comment. GSA Today 6: 21.</li>
+  <li>Archibald, J. D. 1996. No statistical support for sudden (or gradual) extinction of dinosaurs. Reply. Geology 24: 958-959.</li>
+  <li>Archibald, J. D. 1983. A study of Mammalia and geology across the Cretaceous-Tertiary boundary in Garfield County, Montana. University of California Publications in the Geological Sciences 122:1-286.</li>
+</ul>
+    </ouc:div>
+    
+    <ouc:div label="exhibitions" group="Everyone" button-text="Exhibitions">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="premieres" group="Everyone" button-text="Premieres">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="productions" group="Everyone" button-text="Productions">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="performances" group="Everyone" button-text="Performances">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+
+    <ouc:div label="service" group="Everyone" button-text="Service">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
+    </ouc:div>
+    
+    <ouc:div label="community-engagement" group="Everyone" button-text="Community Engagement">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+    
+    <ouc:div label="assignments" group="Everyone" button-text="Assignments">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+
+    <ouc:div label="other-details" group="Everyone" button-text="Other Details">
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+    </ouc:div>
+	
+</document>
