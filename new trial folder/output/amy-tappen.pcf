@@ -135,7 +135,7 @@
 		<ouc:div label="unit" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Organizational Unit" /></ouc:div>
 		<ouc:div label="division" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Division" /></ouc:div>
 
-		<ouc:div label="campus-location" group="Everyone" button="hide"><ouc:multiedit type="radio" prompt="Campus" options="SDSU:SDSU;SDSU Georgia:SDSU Georgia;SDSU Imperial Valley:SDSU Imperial Valley;SDSU Mission Valley:SDSU Mission Valley;" /></ouc:div>
+		<ouc:div label="campus-location" group="Everyone" button="hide"><ouc:multiedit type="radio" prompt="Campus" options="SDSU:SDSU;SDSU Georgia:SDSU Georgia;SDSU Imperial Valley:SDSU Imperial Valley;SDSU Mission Valley:SDSU Mission Valley;" />San Diego</ouc:div>
 		<ouc:div label="partner-institution" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Partner Institution" /></ouc:div>
 
 		<ouc:div label="email" group="Everyone" button="hide"><ouc:multiedit section="Email" type="text" prompt="Email" alt="e.g. email@sdsu.edu" />amtappen@sdsu.edu</ouc:div>
@@ -147,7 +147,7 @@
 		<ouc:div label="phone-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Phone Label" alt="Label for Phone (Optional)." /></ouc:div>
 		<ouc:div label="phone-alt" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Phone" alt="e.g. 000-000-0000 " /></ouc:div>
 		<ouc:div label="phone-alt-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Phone Label" alt="Label for Alt. Phone (Optional)." /></ouc:div>
-		<ouc:div label="fax" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Fax" alt="e.g. 000-000-0000 " /></ouc:div>
+		<ouc:div label="fax" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Fax" alt="e.g. 000-000-0000 " />619-594-5676</ouc:div>
 
 		<ouc:div label="building" group="Everyone" button="hide"><ouc:multiedit
       type="select"
@@ -299,9 +299,12 @@
 
 	 <ouc:div label="education" group="Everyone" button-text="Education">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-<p>M.A. Education Counseling Advanced Certification:
-                                Restorative Justice Practice and Trauma-Informed Care San Diego State University | B.A. Psychology with a minor in Counseling and Social
-                                Change San Diego State University</p>
+<ol class="dm-profile-activities">
+  <li class="ea-profile-activity">M.A. Education Counseling Advanced Certification:
+ Restorative Justice Practice and Trauma-Informed Care San Diego State University</li>
+  <li class="ea-profile-activity">B.A. Psychology with a minor in Counseling and Social
+ Change San Diego State University</li>
+</ol>
     </ouc:div>
 
     <ouc:div label="specialization" group="Everyone" button-text="Areas of Specialization">
@@ -322,16 +325,19 @@
     
     <ouc:div label="fun-facts" group="Everyone" button-text="Fun Facts">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-<p>It’s my family’s tradition to hang our christmas tree upside
- down from our ceiling. I was in the movie Bring it On! &quot;When we use the flame of our own candle to light another
+<ol class="dm-profile-activities">
+  <li class="ea-profile-activity">It’s my family’s tradition to hang our christmas tree upside
+ down from our ceiling.</li>
+  <li class="ea-profile-activity">I was in the movie Bring it On!</li>
+  <li class="ea-profile-activity">&quot;When we use the flame of our own candle to light another
  candle, the first is not
  diminished. There is now, simply more light.&quot; - Rabbi Lord Jonathan Sacks z&quot;l (of
- blessed memory)</p>
+ blessed memory)</li>
+</ol>
     </ouc:div>
 
     <ouc:div label="mentors" group="Everyone" button-text="Mentors: (for students)">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-      <p></p>
     </ouc:div>
     
     <ouc:div label="responsibilities" group="Everyone" button-text="Responsibilities">
@@ -345,7 +351,7 @@
     <ol></ol></ouc:div>
     
      <ouc:div label="office-hours" group="Everyone" button-text="Office Hours"><ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-<p>Mon-Thu 8:30am – Noon<br/>Mon-Thu 1:00 – 3:30pm<br/>Fri -<br/>Navigate360<br/>only</p>
+<p>Mon-Thu 8:30am – Noon</p>
     </ouc:div> 
 
     <ouc:div label="courses" group="Everyone" button-text="Courses">
@@ -354,13 +360,12 @@
 
      <ouc:div label="student-opportunities" group="Everyone" button-text="Student Opportunities">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-        
     </ouc:div> 
     
     <ouc:div label="research" group="Everyone" button-text="Research">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
 <p>Education Counseling, Academic Advising, First-Year Seminar, Cultural Competence,
-                    Restorative Justice Practices, and Trauma-Informed Care.</p>
+ Restorative Justice Practices, and Trauma-Informed Care.</p>
     </ouc:div>
     
     <ouc:div label="intellectual-contributions" group="Everyone" button-text="Intellectual Contributions">
@@ -378,25 +383,18 @@
 
     <ouc:div label="grants" group="Everyone" button-text="Grants">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-        <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
     </ouc:div>
 
     <ouc:div label="media" group="Everyone" button-text="Media">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-        <p></p>
     </ouc:div>
 
     <ouc:div label="presentations" group="Everyone" button-text="Presentations">
-        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
     </ouc:div>
 
     <ouc:div label="publications" group="Everyone" button-text="Publications">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-<ul>
-  <li>[A]</li>
-  <li>[B]</li>
-  <li>[C]</li>
-</ul>
     </ouc:div>
     
     <ouc:div label="exhibitions" group="Everyone" button-text="Exhibitions">
@@ -416,7 +414,7 @@
     </ouc:div>
 
     <ouc:div label="service" group="Everyone" button-text="Service">
-        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
     </ouc:div>
     
     <ouc:div label="community-engagement" group="Everyone" button-text="Community Engagement">

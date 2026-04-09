@@ -10,7 +10,7 @@
 	<ouc:info><tcf>faculty-profile-v2.tcf</tcf><tmpl>faculty-profile-v2.tmpl</tmpl></ouc:info>
 
 	<ouc:properties label="metadata">
-		<title>Nitya Bhaskaran</title>
+		<title>Sukanya Solase</title>
 		<meta name="Description" content="" />
 		<meta name="Keywords" content="" />
 	</ouc:properties>
@@ -116,38 +116,38 @@
 
 	<item>
 		<ouc:div label="prefix" group="Everyone" button="hide"><ouc:multiedit section="Personal Info" type="text" prompt="Prefix" alt="Prefix or abbreviated title (e.g. Mx., Prof., or Mrs.)." /></ouc:div>
-		<ouc:div label="first-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="First Name" />Nitya</ouc:div>
-		<ouc:div label="last-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Last Name" />Bhaskaran</ouc:div>
-		<ouc:div label="suffix" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Suffix" />M.S.</ouc:div>
-		<ouc:div label="display-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Display Name" alt="If provided, overrides Prefix, First Name, Last Name, and Suffix for display purposes. First and Last Name fields will still be used for sorting purposes on the list." />Nitya Bhaskaran</ouc:div>
-		<ouc:div label="pronouns" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Pronouns" alt="Enter preferred personal pronouns (ie. They/Them)." />Nitya</ouc:div>
+		<ouc:div label="first-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="First Name" />Sukanya</ouc:div>
+		<ouc:div label="last-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Last Name" />Solase</ouc:div>
+		<ouc:div label="suffix" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Suffix" /></ouc:div>
+		<ouc:div label="display-name" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Display Name" alt="If provided, overrides Prefix, First Name, Last Name, and Suffix for display purposes. First and Last Name fields will still be used for sorting purposes on the list." /></ouc:div>
+		<ouc:div label="pronouns" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Pronouns" alt="Enter preferred personal pronouns (ie. They/Them)." />Sukanya</ouc:div>
 		<ouc:div label="sort-order" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Sort Order" alt="Numeric value to override alphabetic sorting (Optional), e.g. to place the Dean at the top of the list, enter '1', or to push someone to the bottom of the list, enter a value &amp;gt; 1000." /></ouc:div>
 
-		<ouc:div label="image" group="Everyone" button="hide"><ouc:multiedit type="image" prompt="Image" alt="Select a profile photo. Use a square image that is at least 300x300 pixels." path="/images/faculty" lockout="no"/><img src="https://biology.sdsu.edu/wp-content/uploads/profiles/nitya-bhaskaran-300.jpg" alt="Closeup of Nitya Bhaskaran." /></ouc:div>
+		<ouc:div label="image" group="Everyone" button="hide"><ouc:multiedit type="image" prompt="Image" alt="Select a profile photo. Use a square image that is at least 300x300 pixels." path="/images/faculty" lockout="no"/><img src="" alt="" /></ouc:div>
 
 		<ouc:div label="reports-to" group="Everyone" button="hide"><ouc:multiedit section="Organizational Structure" type="filechooser" prompt="Reports to" alt="Select the profile of the individual this person reports to." /></ouc:div>
 		<ouc:div label="type" group="Everyone" button="hide"><ouc:multiedit section="Affiliation" type="radio" prompt="Type" options="Faculty:Faculty;Staff:Staff;Student:Student;Lecturer:Lecturer;Other:Other" /></ouc:div>
-		<ouc:div label="title" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Title" />Instructional Support Technician</ouc:div>
+		<ouc:div label="title" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Title" />M.S. Student in CS</ouc:div>
 
 		
-		<ouc:div label="department" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Department" />Department of Biology</ouc:div>
-		<ouc:div label="program" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Program Area" />College of Sciences</ouc:div>
+		<ouc:div label="department" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Department" />Department of Computer Science</ouc:div>
+		<ouc:div label="program" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Program Area" /></ouc:div>
 		<ouc:div label="unit" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Organizational Unit" /></ouc:div>
 		<ouc:div label="division" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Division" /></ouc:div>
 
-		<ouc:div label="campus-location" group="Everyone" button="hide"><ouc:multiedit type="radio" prompt="Campus" options="SDSU:SDSU;SDSU Georgia:SDSU Georgia;SDSU Imperial Valley:SDSU Imperial Valley;SDSU Mission Valley:SDSU Mission Valley;" />San Diego</ouc:div>
+		<ouc:div label="campus-location" group="Everyone" button="hide"><ouc:multiedit type="radio" prompt="Campus" options="SDSU:SDSU;SDSU Georgia:SDSU Georgia;SDSU Imperial Valley:SDSU Imperial Valley;SDSU Mission Valley:SDSU Mission Valley;" />SDSU</ouc:div>
 		<ouc:div label="partner-institution" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Partner Institution" /></ouc:div>
 
-		<ouc:div label="email" group="Everyone" button="hide"><ouc:multiedit section="Email" type="text" prompt="Email" alt="e.g. email@sdsu.edu" />nbhaskaran7328@sdsu.edu</ouc:div>
+		<ouc:div label="email" group="Everyone" button="hide"><ouc:multiedit section="Email" type="text" prompt="Email" alt="e.g. email@sdsu.edu" />ssolase@sdsu.edu</ouc:div>
 		<ouc:div label="email-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Email Label" alt="Label for Email Address (Optional)." /></ouc:div>
 		<ouc:div label="email-alt" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Email" alt="e.g. email@sdsu.edu" /></ouc:div>
 		<ouc:div label="email-alt-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Email Label" alt="Label for Alt. Email Address (Optional)." /></ouc:div>
 
-		<ouc:div label="phone" group="Everyone" button="hide"><ouc:multiedit section="Phone/Fax" type="text" prompt="Phone" alt="e.g. 000-000-0000 " />619-594-2730</ouc:div>
+		<ouc:div label="phone" group="Everyone" button="hide"><ouc:multiedit section="Phone/Fax" type="text" prompt="Phone" alt="e.g. 000-000-0000 " /></ouc:div>
 		<ouc:div label="phone-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Phone Label" alt="Label for Phone (Optional)." /></ouc:div>
 		<ouc:div label="phone-alt" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Phone" alt="e.g. 000-000-0000 " /></ouc:div>
 		<ouc:div label="phone-alt-label" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Alt. Phone Label" alt="Label for Alt. Phone (Optional)." /></ouc:div>
-		<ouc:div label="fax" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Fax" alt="e.g. 000-000-0000 " />619-594-5676</ouc:div>
+		<ouc:div label="fax" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="Fax" alt="e.g. 000-000-0000 " /></ouc:div>
 
 		<ouc:div label="building" group="Everyone" button="hide"><ouc:multiedit
       type="select"
@@ -166,7 +166,7 @@
       type="text"
       prompt="Street Address Line 1"
       alt="First line of street address, e.g. 5500 Campanile Drive"
-    /></ouc:div>
+    />5500 Campanile Dr.</ouc:div>
     <ouc:div
       label="street-address-2"
       group="Everyone"
@@ -179,19 +179,19 @@
     <ouc:div label="city" group="Everyone" button="hide"><ouc:multiedit
       type="text"
       prompt="City"
-    /></ouc:div>
+    />San Diego</ouc:div>
     <ouc:div label="state" group="Everyone" button="hide"><ouc:multiedit
       type="text"
       prompt="State/Region"
-    /></ouc:div>
+    />CA</ouc:div>
     <ouc:div label="zip" group="Everyone" button="hide"><ouc:multiedit
       type="text"
       prompt="Zip/Postal Code"
-    /></ouc:div>
+    />92182</ouc:div>
     <ouc:div label="mail-code" group="Everyone" button="hide"><ouc:multiedit
       type="text"
       prompt="Mail Code"
-    />4614</ouc:div>
+    /></ouc:div>
     <ouc:div label="file-link" group="Everyone" button="hide">
       <ouc:multiedit
         type="filechooser"
@@ -293,18 +293,11 @@
 	</item>
 
 	<ouc:div label="bio" group="Everyone" button-text="Bio">
-		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="maincontent" />
-<p>Nitya Bhaskaran works for the Department of Biology within the College of
- Sciences at the San Diego campus as an Instructional Support
- Technician.</p>
-    </ouc:div>
+		<ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="maincontent" /><p>hello</p>
+	</ouc:div>
 
 	 <ouc:div label="education" group="Everyone" button-text="Education">
-        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-<ol class="dm-profile-activities">
-  <li class="ea-profile-activity">M.S. Microbiology SDSU</li>
-  <li class="ea-profile-activity">B.S. Microbiology, Immunology University of Sydney</li>
-</ol>
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
     </ouc:div>
 
     <ouc:div label="specialization" group="Everyone" button-text="Areas of Specialization">
@@ -324,11 +317,13 @@
     </ouc:div>
     
     <ouc:div label="fun-facts" group="Everyone" button-text="Fun Facts">
-        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p>
+      </p>
     </ouc:div>
 
     <ouc:div label="mentors" group="Everyone" button-text="Mentors: (for students)">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+      <p></p>
     </ouc:div>
     
     <ouc:div label="responsibilities" group="Everyone" button-text="Responsibilities">
@@ -341,9 +336,8 @@
         <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>    
     <ol></ol></ouc:div>
     
-     <ouc:div label="office-hours" group="Everyone" button-text="Office Hours"><ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-<p>By Appointment</p>
-    </ouc:div> 
+     <ouc:div label="office-hours" group="Everyone" button-text="Office Hours"><ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>By appointment only 
+</ouc:div> 
 
     <ouc:div label="courses" group="Everyone" button-text="Courses">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
@@ -351,11 +345,12 @@
 
      <ouc:div label="student-opportunities" group="Everyone" button-text="Student Opportunities">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        
     </ouc:div> 
     
     <ouc:div label="research" group="Everyone" button-text="Research">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
-<p>TBA</p>
+      <p></p>
     </ouc:div>
     
     <ouc:div label="intellectual-contributions" group="Everyone" button-text="Intellectual Contributions">
@@ -373,18 +368,21 @@
 
     <ouc:div label="grants" group="Everyone" button-text="Grants">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
     </ouc:div>
 
     <ouc:div label="media" group="Everyone" button-text="Media">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p></p>
     </ouc:div>
 
     <ouc:div label="presentations" group="Everyone" button-text="Presentations">
-        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
     </ouc:div>
 
     <ouc:div label="publications" group="Everyone" button-text="Publications">
         <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
     </ouc:div>
     
     <ouc:div label="exhibitions" group="Everyone" button-text="Exhibitions">
@@ -404,7 +402,7 @@
     </ouc:div>
 
     <ouc:div label="service" group="Everyone" button-text="Service">
-        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/>
+        <ouc:editor csspath="/_resources/ou/editor/crimson/wysiwyg.css" cssmenu="/_resources/ou/editor/crimson/styles.txt" wysiwyg-class="full-width"/><p><ul class='dm-profile-activities' style='font-family:proxima-nova, Helvetica, Arial, sans-serif;text-align:left;text-indent:-0.5in;list-style-type:none;margin-left:0in;padding-left:0.5in'><li class='dm-profile-acitivity'></li></ul></p>
     </ouc:div>
     
     <ouc:div label="community-engagement" group="Everyone" button-text="Community Engagement">
